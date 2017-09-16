@@ -1,0 +1,46 @@
+#filter-container {
+  margin-top: 4em;
+  margin-bottom: 2em;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+  text-align: center;
+
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  z-index: 1;
+}
+
+#filter-container .form-group:first-of-type {
+  margin-left: 0em;
+}
+
+#filter-container .form-group {
+  margin-left: 1em;
+}
+
+#filter-container option {
+  font-size: 16px !important;
+}
+
+@media (max-width: 539px) {
+  #filter-container .form-group:last-of-type {
+    margin-left: 0em;
+  }
+}

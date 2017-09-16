@@ -1,0 +1,39 @@
+#search-results-container {
+  margin-bottom: 4em;
+}
+
+@media (max-width: 767px) {
+  #search-results-container {
+    margin-bottom: 2em;
+  }
+}
+
+.state-message {
+  padding-top:  2em;
+  text-align: center;
+}
+
+.enter {
+  opacity: 0;
+  -webkit-transition: 1s;
+  transition: 1s;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.enterActive {
+  opacity: 1;
+  white-space: wrap;
+}
+.leave {
+  opacity: 1;
+  -webkit-transition: 1s;
+  transition: 1s;
+  white-space: wrap;
+}
+.leaveActive {
+  opacity: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

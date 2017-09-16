@@ -1,0 +1,28 @@
+#book-details-container {
+  background-color: #FFF9C8;
+  height: 100%;
+  padding: 2em;
+  margin-top: 4em;
+  margin-bottom: 3em;
+}
+
+.book-details-col {
+  z-index: 1;
+}
+
+#book-details-container h3 {
+  margin-top: 0.2em;
+  margin-bottom: 0;
+}
+
+#book-details-container p {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  text-align: justify;
+  text-indent: 2em;
+}
+
+#book-details-container img {
+  background-color: #FFF;
+  padding: 4px;
+}
