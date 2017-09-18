@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -11,21 +12,28 @@ import GenresListWithData from './components/GenresList/GenresList';
 import './SearchResults.css';
 
 class SearchResults extends Component {
+
+  componentDidUpdate() {
+
+    // Cuando se muestre el componente, el scroll se posicionará al inicio de éste
+    const node = ReactDOM.findDOMNode(this.refs.searchResultsContainer);
+    node.scrollIntoView({ behavior: "smooth" });
+  }
+
+  // Cargar la data de la búsqueda, ya sean libros, autores o géneros
   loadData() {
-    let listWithData = '';
     if (this.props.filterType === 'title' || this.props.filterText !== '') {
-      listWithData = <BooksListWithData />;
+      return <BooksListWithData />;
     } else if (this.props.filterType === 'author') {
-      listWithData = <AuthorsListWithData />;
-    } else { // if(props.filterType === 'genre')
-      listWithData = <GenresListWithData />;
+      return <AuthorsListWithData />;
     }
-    return listWithData;
+    // else if(props.filterType === 'genre')
+    return <GenresListWithData />;
   }
 
   render() {
     return (
-      <div id="search-results-container">
+      <div id="search-results-container" ref="searchResultsContainer">
         {this.loadData()}
       </div>
     );
