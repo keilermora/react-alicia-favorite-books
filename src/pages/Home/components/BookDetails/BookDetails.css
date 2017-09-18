@@ -25,4 +25,22 @@
 #book-details-container img {
   background-color: #FFF;
   padding: 4px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#book-details-container .btn {
+  background-color: #FFF9C8;
+  border: solid 1px #FFF9C8;
+  border-radius: 0;
+  color: #FF4867;
+  font-size: 1.5rem;
+  height: 3em;
+  transition: 0.5s;
+}
+
+#book-details-container .btn:hover {
+  border: solid 1px #FF4867;
+  background-color: #FFF9C8;
+  color: #FF4867;
 }

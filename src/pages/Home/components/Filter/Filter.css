@@ -27,20 +27,92 @@
   z-index: 1;
 }
 
-#filter-container .form-group:first-of-type {
-  margin-left: 0em;
-}
-
-#filter-container .form-group {
-  margin-left: 1em;
+#filter-container .form-group,
+#filter-container .form-group .input-group {
+  width: 100%;
 }
 
 #filter-container option {
-  font-size: 16px !important;
+  font-size: 16px;
+}
+
+#filter-container button {
+  background-color: #FFF9C8;
+  border: solid 1px #FFF9C8;
+  border-radius: 0;
+  color: #FF4867;
+  font-size: 1.5rem;
+  height: 3.2em;
+  transition: 0.5s;
+  width: 100%;
+}
+
+#filter-container button:hover,
+#filter-container button:focus,
+#filter-container button.active {
+  border: solid 1px #FF4867 !important;
+}
+
+#filter-container input {
+  border-radius: 0;
+  border: none;
+  font-size: 16px;
+  height: 3em;
+  width: 100%;
+}
+
+#filter-container input:focus {
+  box-shadow: initial;
+}
+
+#filter-container .input-group-addon {
+  background-color: #FFF9C8;
+  border-radius: 0;
+  border: none;
+  color: #FF4867;
+  font-size: 1.5rem;
+  height: 3em;
+}
+
+#filter-container select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #FFF9C8;
+  border-radius: 0;
+  border-color: #FFF9C8;
+  color: #FF4867;
+  font-weight: bold;
+  font-size: 16px;
+  height: 3em;
+  padding-right: 3.5em;
+  width: 100%;
+}
+
+#filter-container select:hover {
+  cursor: pointer;
+  border-color: #FF4867;
+}
+
+#filter-container select:focus {
+  box-shadow: initial;
+}
+
+@media (max-width: 991px) {
+  #filter-container .input-group {
+    margin-top: 1em;
+  }
+}
+
+@media (max-width: 767px) {
+  #filter-container .input-group {
+    margin-top: 0em;
+  }
 }
 
 @media (max-width: 539px) {
-  #filter-container .form-group:last-of-type {
-    margin-left: 0em;
+  #filter-container {
+    margin-top: 2em;
+    margin-bottom: 0em;
   }
 }
