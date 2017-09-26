@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { Col, Grid, Row } from 'react-bootstrap';
 import PropTypes from 'prop-types';
@@ -8,37 +9,46 @@ import './Home.css';
 import sakura from 'assets/images/sakura.png';
 
 // Componentes de Home
-
 import Header from './components/Header/Header';
 import Filter from './components/Filter/Filter';
 import BookDetails from './components/BookDetails/BookDetails';
 import SearchResults from './components/SearchResults/SearchResults';
 
-function Home(props) {
-  return (
-    <main id="main-home">
-      <img id="img-sakura" src={sakura} alt="" />
-      <Header />
-      <Grid id="results-layout" fluid>
-        {props.bookID !== '' ?
-          <Row>
-            <Col xs={12}>
-              <BookDetails />
-            </Col>
-          </Row>
-          :
-          <Row>
-            <Col xs={12} id="filter-layout">
-              <Filter />
-            </Col>
-            <Col xs={12} id="search-results-layout">
-              <SearchResults />
-            </Col>
-          </Row>
-        }
-      </Grid>
-    </main>
-  );
+class Home extends Component {
+
+  componentDidUpdate() {
+
+    // Cuando se actualice el componente, el scroll se posicionará al inicio de éste
+    const node = ReactDOM.findDOMNode(this.refs.resultsLayout);
+    node.scrollIntoView({block: 'start'});
+  }
+
+  render() {
+    return (
+      <main id="main-home">
+        <img id="img-sakura" src={sakura} alt="" />
+        <Header />
+        <Grid id="results-layout" ref="resultsLayout" fluid>
+          {this.props.bookID !== '' ?
+            <Row>
+              <Col xs={12}>
+                <BookDetails />
+              </Col>
+            </Row>
+            :
+            <Row>
+              <Col xs={12} id="filter-layout">
+                <Filter />
+              </Col>
+              <Col xs={12} id="search-results-layout">
+                <SearchResults />
+              </Col>
+            </Row>
+          }
+        </Grid>
+      </main>
+    );
+  }
 }
 
 Home.propTypes = {

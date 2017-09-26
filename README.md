@@ -1,4 +1,4 @@
-# [Libros favoritos de Alicia](aliciatorres.dualemento.com)
+# [Libros favoritos de Alicia](http://aliciatorres.dualemento.com)
 Projecto desarrollado en [React](https://facebook.github.io/react/), una librería de Javascript para construir interfaces de usuario.
 
 ------

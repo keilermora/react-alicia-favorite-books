@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -12,13 +11,6 @@ import GenresListWithData from './components/GenresList/GenresList';
 import './SearchResults.css';
 
 class SearchResults extends Component {
-
-  componentDidUpdate() {
-
-    // Cuando se muestre el componente, el scroll se posicionará al inicio de éste
-    const node = ReactDOM.findDOMNode(this.refs.searchResultsContainer);
-    node.scrollIntoView({ behavior: "smooth" });
-  }
 
   // Cargar la data de la búsqueda, ya sean libros, autores o géneros
   loadData() {
@@ -33,7 +25,7 @@ class SearchResults extends Component {
 
   render() {
     return (
-      <div id="search-results-container" ref="searchResultsContainer">
+      <div id="search-results-container">
         {this.loadData()}
       </div>
     );

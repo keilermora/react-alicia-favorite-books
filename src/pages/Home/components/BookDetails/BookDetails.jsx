@@ -28,13 +28,6 @@ class BookDetails extends Component {
     this.setBookID = this.setBookID.bind(this);
   }
 
-  componentDidMount() {
-
-    // Cuando se muestre el componente, el scroll se posicionará al inicio de éste
-    const node = ReactDOM.findDOMNode(this.refs.bookDetailsContainer);
-    node.scrollIntoView({ behavior: "smooth" });
-  }
-
   // Vaciar el id del libro del estado
   setBookID(id) {
     return this.props.actions.setBookID(id);
@@ -60,7 +53,7 @@ class BookDetails extends Component {
 
   render() {
     return (
-      <Grid id="book-details-container" ref="bookDetailsContainer">
+      <Grid id="book-details-container">
         <Row>
           <Col xs={12} sm={3} className="book-details-col">
             <Image responsive src={this.book.imageUrl} />
