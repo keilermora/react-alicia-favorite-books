@@ -44,3 +44,9 @@
   background-color: #FFF9C8;
   color: #FF4867;
 }
+
+@media (max-width: 767px) {
+  #book-details-container {
+    margin-top: 2em;
+  }
+}
