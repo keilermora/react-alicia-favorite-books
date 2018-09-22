@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="utf-8">
@@ -8,13 +8,22 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
 
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Open+Sans" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104412278-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    <title>Libros favoritos de Alicia</title>
+      gtag('config', 'UA-104412278-3');
+    </script>
+
+    <title>Los libros favoritos de Alicia</title>
+    <meta name="description" content="Para ella &hearts; Desarrollado por Keiler Mora, usando las librerías de JavaScript React y Redux para crear la interfaz de usuario.">
   </head>
   <body>
     <noscript>
-      Debe habilitar Javascript para poder visualizar la aplicación.
+      Debes habilitar JavaScript para poder visualizar la aplicación.
     </noscript>
     <div id="root"></div>
   </body>

@@ -1,64 +1,59 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react'
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
-import { Col, Grid, Row } from 'react-bootstrap';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
-// Estilos de Home
-import './Home.css';
-import sakura from 'assets/images/sakura.png';
+// Componentes
+import Title from './components/Title/Title'
+import Filter from './components/Filter/Filter'
+import SearchResults from './components/SearchResults/SearchResults'
 
-// Componentes de Home
-import Header from './components/Header/Header';
-import Filter from './components/Filter/Filter';
-import BookDetails from './components/BookDetails/BookDetails';
-import SearchResults from './components/SearchResults/SearchResults';
+// Acciones para actualizar el estado de la app
+import { setCurrentRoute } from '../../redux/actions'
 
 class Home extends Component {
 
-  componentDidUpdate() {
+  componentWillMount() {
+    this.props.setCurrentRoute('Home')
+  }
 
-    // Cuando se actualice el componente, el scroll se posicionará al inicio de éste
-    const node = ReactDOM.findDOMNode(this.refs.resultsLayout);
-    node.scrollIntoView({block: 'start'});
+  /**
+   * Si el usuario ha estado antes en la página para visualizar la información
+   * de un libro, entonces el scroll debe ubicarse en la búsqueda de libros y
+   * no al inicio de la página.
+   */
+  componentDidMount() {
+    if(this.props.route.previous === 'Book') {
+      const node = ReactDOM.findDOMNode(this.refs.searchLayout);
+      node.scrollIntoView({block: 'start'});
+    }
   }
 
   render() {
     return (
-      <main id="main-home">
-        <img id="img-sakura" src={sakura} alt="" />
-        <Header />
-        <Grid id="results-layout" ref="resultsLayout" fluid>
-          {this.props.bookID !== '' ?
-            <Row>
-              <Col xs={12}>
-                <BookDetails />
-              </Col>
-            </Row>
-            :
-            <Row>
-              <Col xs={12} id="filter-layout">
-                <Filter />
-              </Col>
-              <Col xs={12} id="search-results-layout">
-                <SearchResults />
-              </Col>
-            </Row>
-          }
-        </Grid>
+      <main>
+        <Title />
+        <Filter ref="searchLayout"/>
+        <SearchResults />
       </main>
-    );
+    )
   }
 }
 
 Home.propTypes = {
-  bookID: PropTypes.string.isRequired,
-};
-
-function mapStateToProps(state) {
-  return {
-    bookID: state.reducer.get('bookID'),
-  };
+  route: PropTypes.shape({
+    previous: PropTypes.string
+  })
 }
 
-export default connect(mapStateToProps)(Home);
+const mapStateToProps = state => ({
+  route: {
+    previous: state.route.previous
+  }
+})
+
+const mapDispatchToProps = {
+  setCurrentRoute: route => setCurrentRoute(route)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -1,33 +1,41 @@
-import { gql } from 'react-apollo';
+export const allBooks = `
+  {
+    allBooks (orderBy:publishedAt_DESC)
+    {
+      id
+      title
+      publishedAt
+      imageUrl
+      summary
+      author {
+        id
+        name
+      }
+      genre {
+        id
+        name
+      }
+      saga {
+        id
+        name
+      }
+    }
+  }
+`;
 
-export const allBooksQuery = gql`query {
-  allBooks (orderBy: publishedAt_DESC) {
-    id
-    title
-    author {
+export const allFilterParams = `
+  {
+    allAuthors (orderBy: name_ASC) {
       id
       name
     }
-    publishedAt
-    genre {
+    allGenres (orderBy: name_ASC) {
       id
       name
     }
-    imageUrl
-    summary
+    allSagas (orderBy: name_ASC) {
+      id
+      name
+    }
   }
-}`;
-
-export const allAuthorsQuery = gql`query {
-  allAuthors (orderBy: name_ASC) {
-    id,
-    name,
-  }
-}`;
-
-export const allGenresQuery = gql`query {
-  allGenres (orderBy: name_ASC) {
-    id,
-    name,
-  }
-}`;
+`;

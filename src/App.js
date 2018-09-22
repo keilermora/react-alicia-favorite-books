@@ -1,29 +1,46 @@
-import React from 'react';
-import { ApolloProvider } from 'react-apollo';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import React, { Component } from 'react'
+import { Provider } from 'react-redux'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-// Estilos globales
-import 'bootstrap/dist/css/bootstrap.css';
-import './App.css';
+import store from './redux/store'
 
-// Redux
-import client from './redux/client';
-import store from './redux/store';
+import './App.css'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
-// Páginas
-import Home from './pages/Home/Home';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faCaretLeft } from '@fortawesome/free-solid-svg-icons'
 
-function App() {
-  const e = React.createElement;
-  return (
-    e(ApolloProvider, { client, store },
-      e(BrowserRouter, null,
-        e(Switch, null,
-          e(Route, { path: '/', exact: true, component: Home }),
-        ),
-      ),
+import SakuraImage from './commons/SakuraImage/SakuraImage'
+import ParticlesBackground from './commons/ParticlesBackground/ParticlesBackground'
+
+import Home from './pages/Home/Home'
+import About from './pages/About/About'
+import Book from './pages/Book/Book'
+import NotFound from './pages/NotFound/NotFound'
+
+library.add(faSearch)
+library.add(faCaretLeft)
+
+class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <main>
+          <SakuraImage />
+          <ParticlesBackground />
+          <Router>
+            <Switch>
+              <Route exact path="/" component={Home}/>
+              <Route exact path="/about" component={About}/>
+              <Route exact path="/book/:id" component={Book}/>
+              <Route component={NotFound}/>
+            </Switch>
+          </Router>
+        </main>
+      </Provider>
     )
-  );
+  }
 }
 
-export default App;
+export default App

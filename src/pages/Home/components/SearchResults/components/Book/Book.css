@@ -1,0 +1,23 @@
+.book {
+  background-color: rgb(240, 248, 255);
+  cursor: pointer;
+  display: inline-block;
+  height: 350px;
+  padding: 4px;
+  margin: 0.5em;
+  width: 226px;
+  transition: 200ms;
+  position: relative;
+}
+
+.book:hover {
+  padding: 0px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.8);
+}
+
+@media only screen and (max-width: 576px) {
+  .book {
+    width: 140px;
+    height: 206px;
+  }
+}

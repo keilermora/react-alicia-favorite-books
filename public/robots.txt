@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: http://aliciatorres.dualemento.com/sitemap.xml
