@@ -1,6 +1,12 @@
 {
-  "short_name": "React App",
-  "name": "Alicia's Favorite Books",
+  "name": "Los libros Favoritos de Alicia",
+  "short_name": "Los libros Favoritos de Alicia",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#f0f8ff",
+  "background_color": "#79f768",
+  "description": "Para ella &hearts; Desarrollado por Keiler Mora, usando las librerías de JavaScript React y Redux para crear la interfaz de usuario.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,8 +14,5 @@
       "type": "image/x-icon"
     }
   ],
-  "start_url": "./index.html",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "lang": "es"
 }
