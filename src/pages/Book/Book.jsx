@@ -163,7 +163,7 @@ class Book extends Component {
         <div className={'book-page'}>
           <div className={'container'}>
             <p>
-              El libro que estás buscando no está en la lista. Tal vez Alicia cambió de opinión, no lo sé...<br/>
+              El libro que estás buscando no está en la lista. Tal vez Alicia cambió de opinión...<br/>
               ¯\_(ツ)_/¯
             </p>
             <Link to="/">
