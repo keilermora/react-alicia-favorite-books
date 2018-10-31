@@ -60,18 +60,18 @@ class Book extends Component {
    */
   getMonthName(month) {
     switch(month) {
-      case '01': return 'Enero'
-      case '02': return 'Febrero'
-      case '03': return 'Marzo'
-      case '04': return 'Abril'
-      case '05': return 'Mayo'
-      case '06': return 'Junio'
-      case '07': return 'Julio'
-      case '08': return 'Agosto'
-      case '09': return 'Septiembre'
-      case '10': return 'Octubre'
-      case '11': return 'Noviembre'
-      default: return 'Diciembre'
+      case '01': return 'ene'
+      case '02': return 'feb'
+      case '03': return 'mar'
+      case '04': return 'abr'
+      case '05': return 'may'
+      case '06': return 'jun'
+      case '07': return 'jul'
+      case '08': return 'ago'
+      case '09': return 'sep'
+      case '10': return 'oct'
+      case '11': return 'nov'
+      default: return 'dic'
     }
   }
   /**
@@ -135,7 +135,7 @@ class Book extends Component {
                 </h6>
                 <h6>
                   <span className={'label-title'}>Fecha de publicación:</span>
-                  <span className={'label-info'}>{this.publishedAt.day} de {this.publishedAt.month} del {this.publishedAt.year}</span>
+                  <span className={'label-info'}>{this.publishedAt.day}/{this.publishedAt.month}/{this.publishedAt.year}</span>
                 </h6>
                 <h6>
                   <span className={'label-title'}>Género:</span>
