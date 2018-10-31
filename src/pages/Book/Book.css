@@ -9,6 +9,7 @@
 
 .book-page > .container {
   background-color: rgb(255, 249, 200);
+  border-radius: .25rem;
   padding: 2em;
   margin-top: 2em;
   margin-bottom: 2em;
@@ -56,7 +57,6 @@
 .book-page > .container > a > button {
   background-color: rgb(237, 54, 85) !important;
   border: none !important;
-  border-radius: 0 !important;
   box-shadow: initial !important;
   color: rgb(255, 249, 200) !important;
   transition: 0.2s;
