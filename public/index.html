@@ -1,25 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <!-- ensure proper document rendering -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- control over where resources are loaded from -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+    <!-- essential -->
+    <title>Los libros favoritos de Alicia</title>
+    <meta name="description" content="Para ella &hearts; Desarrollado por Keiler Mora, usando las librerías de JavaScript React y Redux para crear la interfaz de usuario.">
+    <!-- links to information about the author of the document -->
+    <link rel="author" href="%PUBLIC_URL%/humans.txt">
+    <!-- name of web application -->
+    <meta name="application-name" content="Los libros favoritos de Alicia">
+    <!-- theme Color for Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#f0f8ff">
+    <!-- behavior of search engine crawling and indexing -->
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <!-- don't show the sitelinks search box --> -->
+    <meta name="google" content="nositelinkssearchbox">
+    <!-- don't provide a translation for this document -->
+    <meta name="google" content="notranslate">
+    <!-- completely opt out of DNS prefetching -->
+    <meta http-equiv="x-dns-prefetch-control" content="off">
+    <!-- Links to a JSON file that specifies "installation" credentials for the web applications -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <!-- icon -->
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <link rel="icon" sizes="192x192" href="%PUBLIC_URL%/favicon.ico">
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.ico">
+    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/favicon.ico">
+    <link rel="mask-icon" href="%PUBLIC_URL%/favicon.ico" color="#f0f8ff">
+    <!-- facebook open graph -->
+    <meta property="og:url" content="http://aliciatorres.dualemento.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Los libros favoritos de Alicia">
+    <meta property="og:image" content="%PUBLIC_URL%/favicon.ico">
+    <meta property="og:description" content="Para ella &hearts; Desarrollado por Keiler Mora, usando las librerías de JavaScript React y Redux para crear la interfaz de usuario.">
+    <meta property="og:site_name" content="Los libros favoritos de Alicia">
+    <meta property="og:locale" content="es_VE">
+    <!-- twitter card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@keilermora">
+    <meta name="twitter:url" content="http://aliciatorres.dualemento.com/">
+    <meta name="twitter:title" content="Los libros favoritos de Alicia">
+    <meta name="twitter:description" content="Para ella &hearts; Desarrollado por Keiler Mora, usando las librerías de JavaScript React y Redux para crear la interfaz de usuario.">
+    <meta name="twitter:image" content="%PUBLIC_URL%/favicon.ico">
+    <!-- disallow Twitter from using your site's info for personalization purposes -->
+    <meta name="twitter:dnt" content="on">
+    <!--  prevent people from saving things from your website -->
+    <meta name="pinterest" content="nopin">
+    <!-- Apple iOS -->
+    <meta name="apple-mobile-web-app-title" content="Los libros favoritos de Alicia">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- set the base URL for all relative URLs within the document -->
+    <base href="/">
+    <!-- global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104412278-3"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'UA-104412278-3');
     </script>
-
-    <title>Los libros favoritos de Alicia</title>
-    <meta name="description" content="Para ella &hearts; Desarrollado por Keiler Mora, usando las librerías de JavaScript React y Redux para crear la interfaz de usuario.">
   </head>
   <body>
     <noscript>
