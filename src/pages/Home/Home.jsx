@@ -1,20 +1,19 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 // Componentes
-import Title from './components/Title/Title'
-import Filter from './components/Filter/Filter'
-import SearchResults from './components/SearchResults/SearchResults'
+import Title from './components/Title/Title';
+import Filter from './components/Filter/Filter';
 
+import SearchResults from './components/SearchResults/SearchResults';
 // Acciones para actualizar el estado de la app
-import { setCurrentRoute } from '../../redux/actions'
+import { setCurrentRoute } from '../../redux/actions';
 
 class Home extends Component {
-
   componentWillMount() {
-    this.props.setCurrentRoute('Home')
+    this.props.setCurrentRoute('Home');
   }
 
   /**
@@ -23,9 +22,10 @@ class Home extends Component {
    * no al inicio de la página.
    */
   componentDidMount() {
-    if(this.props.route.previous === 'Book') {
+    const { route } = this.props;
+    if (route.previous === 'Book') {
       const node = ReactDOM.findDOMNode(this.refs.searchLayout);
-      node.scrollIntoView({block: 'start'});
+      node.scrollIntoView({ block: 'start' });
     }
   }
 
@@ -33,27 +33,27 @@ class Home extends Component {
     return (
       <main>
         <Title />
-        <Filter ref="searchLayout"/>
+        <Filter ref="searchLayout" />
         <SearchResults />
       </main>
-    )
+    );
   }
 }
 
 Home.propTypes = {
   route: PropTypes.shape({
-    previous: PropTypes.string
-  })
-}
+    previous: PropTypes.string,
+  }).isRequired,
+};
 
 const mapStateToProps = state => ({
   route: {
-    previous: state.route.previous
-  }
-})
+    previous: state.route.previous,
+  },
+});
 
 const mapDispatchToProps = {
-  setCurrentRoute: route => setCurrentRoute(route)
-}
+  setCurrentRoute: route => setCurrentRoute(route),
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
