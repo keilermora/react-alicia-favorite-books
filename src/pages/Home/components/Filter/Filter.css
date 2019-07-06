@@ -24,7 +24,7 @@
   width: 100%;
   transition: all 500ms;
   height: calc(2.25rem + 2px);
-  padding: .375rem .75rem;
+  padding: 0 .75rem;
 }
 
 .filter-component > .container > .row > div > select:hover {
