@@ -4,15 +4,14 @@
   display: flex;
   min-height: 100vh;
   background-color: rgb(255, 166, 143);
-  min-height: 100vh;
 }
 
 .book-page > .container {
   background-color: rgb(255, 249, 200);
   border-radius: .25rem;
-  padding: 2em;
-  margin-top: 2em;
-  margin-bottom: 2em;
+  padding: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
   position: relative;
   text-align: center;
 }
@@ -51,10 +50,10 @@
   font-family: 'Dancing Script', cursive;
   font-size: 200%;
   font-weight: bold;
-  line-height: 0em;
+  line-height: 0;
 }
 
-.book-page > .container > a > button {
+.book-page > .container > .row > div > a > button {
   background-color: rgb(237, 54, 85) !important;
   border: none !important;
   box-shadow: initial !important;
@@ -62,14 +61,14 @@
   transition: 0.2s;
 }
 
-.book-page > .container > a > button:hover {
+.book-page > .container > .row > div > a > button:hover {
   background-color: rgb(255, 249, 200) !important;
   color: rgb(237, 54, 85) !important;
 }
 
 .book-page > .container > p {
   text-indent: 2em;
-  margin-bottom: 0em;
+  margin-bottom: 0;
   padding-bottom: 1em;
 }
 
@@ -77,5 +76,5 @@
   font-family: 'Dancing Script', cursive;
   font-size: 200%;
   font-weight: bold;
-  line-height: 0em;
+  line-height: 0;
 }

@@ -137,9 +137,9 @@ class Book extends Component {
                   <span className="label-title">Fecha de publicación:</span>
                   <span className="label-info">
                     {this.publishedAt.day}
-/
+                    /
                     {this.publishedAt.month}
-/
+                    /
                     {this.publishedAt.year}
                   </span>
                 </h6>
@@ -152,15 +152,15 @@ class Book extends Component {
                   <span className="label-info">{this.book.saga.name}</span>
                 </h6>
                 <p>{this.book.summary}</p>
+                <Link to="/">
+                  <button type="button" className="btn" onClick={this.updateRoute}>
+                    <FontAwesomeIcon icon="caret-left" />
+                    {' '}
+                    Volver
+                  </button>
+                </Link>
               </div>
             </div>
-            <Link to="/">
-              <button type="button" className="btn" onClick={this.updateRoute}>
-                <FontAwesomeIcon icon="caret-left" />
-                {' '}
-Volver
-              </button>
-            </Link>
           </div>
         </div>
       );
