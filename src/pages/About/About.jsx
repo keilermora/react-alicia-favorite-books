@@ -78,6 +78,7 @@ class About extends Component {
           <Link to="/">
             <button type="button" className="btn" onClick={this.updateRoute}>
               <FontAwesomeIcon icon="caret-left" />
+              {' '}
               Volver
             </button>
           </Link>
