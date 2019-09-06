@@ -117,34 +117,42 @@ class Filter extends Component {
         <div className="container">
           <div className="row">
             <div className="col-xs-12 col-sm-6 col-lg-3">
-              <label htmlFor="filter-author">Autor(a)</label>
-              <select id="filter-author" onChange={this.updateFilterAuthor} defaultValue={filter.author}>
-                <option value="">Todos</option>
-                {authors}
-              </select>
+              <label htmlFor="filter-author">
+                <span>Autor(a)</span>
+                <select id="filter-author" onChange={this.updateFilterAuthor} defaultValue={filter.author}>
+                  <option value="">Todos</option>
+                  {authors}
+                </select>
+              </label>
             </div>
             <div className="col-xs-12 col-sm-6 col-lg-3">
-              <label htmlFor="filter-genre">Género</label>
-              <select id="filter-genre" onChange={this.updateFilterGenre} defaultValue={filter.genre}>
-                <option value="">Todos</option>
-                {genres}
-              </select>
+              <label htmlFor="filter-genre">
+                <span>Género</span>
+                <select id="filter-genre" onChange={this.updateFilterGenre} defaultValue={filter.genre}>
+                  <option value="">Todos</option>
+                  {genres}
+                </select>
+              </label>
             </div>
             <div className="col-xs-12 col-sm-6 col-lg-3">
-              <label htmlFor="filter-saga">Saga</label>
-              <select id="filter-saga" onChange={this.updateFilterSaga} defaultValue={filter.saga}>
-                <option value="">Todas</option>
-                {sagas}
-              </select>
+              <label htmlFor="filter-saga">
+                <span>Saga</span>
+                <select id="filter-saga" onChange={this.updateFilterSaga} defaultValue={filter.saga}>
+                  <option value="">Todas</option>
+                  {sagas}
+                </select>
+              </label>
             </div>
             <div className="col-xs-12 col-sm-6 col-lg-3">
-              <label htmlFor="filter-text">Título</label>
-              <div className="input-group">
-                <div className="input-group-prepend">
-                  <FontAwesomeIcon icon="search" />
+              <label htmlFor="filter-text">
+                <span>Título</span>
+                <div className="input-group">
+                  <div className="input-group-prepend">
+                    <FontAwesomeIcon icon="search" />
+                  </div>
+                  <input id="filter-text" type="text" className="form-control" onChange={this.updateFilterText} value={filter.text} />
                 </div>
-                <input id="filter-text" type="text" className="form-control" onChange={this.updateFilterText} value={filter.text} />
-              </div>
+              </label>
             </div>
           </div>
         </div>

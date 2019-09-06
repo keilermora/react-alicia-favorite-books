@@ -5,14 +5,14 @@
   text-align: center;
 }
 
-.filter-component > .container > .row > div > label {
+.filter-component > .container > .row > div > label > span {
   color: rgb(17, 17, 17);
   font-family: 'Dancing Script', cursive;
   font-size: 1.75rem;
-  margin-bottom: 0em;
+  margin-bottom: 0;
 }
 
-.filter-component > .container > .row > div > select {
+.filter-component > .container > .row > div > label > select {
   appearance: none;
   background-color: rgb(255, 249, 200);
   border-radius: .25rem;
@@ -25,17 +25,19 @@
   transition: all 500ms;
   height: calc(2.25rem + 2px);
   padding: 0 .75rem;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
 }
 
-.filter-component > .container > .row > div > select:hover {
+.filter-component > .container > .row > div > label > select:hover {
   border-color: rgba(237, 54, 85, 0.5);
 }
 
-.filter-component > .container > .row > div > select:focus {
+.filter-component > .container > .row > div > label > select:focus {
   outline: 0 none;
 }
 
-.filter-component > .container > .row > div > .input-group > .input-group-prepend {
+.filter-component > .container > .row > div > label > .input-group > .input-group-prepend {
   background-color: rgb(255, 249, 200);
   border-radius: 0;
   border-color: rgb(255, 249, 200);
@@ -46,7 +48,7 @@
   padding: 9px;
 }
 
-.filter-component > .container > .row > div > .input-group > input {
+.filter-component > .container > .row > div > label > .input-group > input {
   background-color: rgb(255, 249, 200);
   border-color: rgb(255, 249, 200);
   border-top-right-radius: .25rem;
@@ -58,7 +60,7 @@
   transition: all 500ms;
 }
 
-.filter-component > .container > .row > div > .input-group > input:hover {
+.filter-component > .container > .row > div > label > .input-group > input:hover {
   background-color: rgb(255, 249, 200);
   border-color: rgba(237, 54, 85, 0.5);
   box-shadow: initial;
