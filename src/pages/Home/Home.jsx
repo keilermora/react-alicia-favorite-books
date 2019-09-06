@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 // Componentes
 import Title from './components/Title/Title';
 import Filter from './components/Filter/Filter';
-
 import SearchResults from './components/SearchResults/SearchResults';
+
 // Acciones para actualizar el estado de la app
 import { setCurrentRoute } from '../../redux/actions';
 
 class Home extends Component {
-  componentWillMount() {
-    this.props.setCurrentRoute('Home');
+  constructor(props) {
+    super(props);
+    this.filterSectionRef = React.createRef();
   }
 
   /**
@@ -22,19 +22,25 @@ class Home extends Component {
    * no al inicio de la página.
    */
   componentDidMount() {
+    setCurrentRoute('Home');
     const { route } = this.props;
     if (route.previous === 'Book') {
-      const node = ReactDOM.findDOMNode(this.refs.searchLayout);
-      node.scrollIntoView({ block: 'start' });
+      this.filterSectionRef.current.scrollIntoView({ block: 'start' });
     }
   }
 
   render() {
     return (
       <main>
-        <Title />
-        <Filter ref="searchLayout" />
-        <SearchResults />
+        <section>
+          <Title />
+        </section>
+        <section ref={this.filterSectionRef}>
+          <Filter />
+        </section>
+        <section>
+          <SearchResults />
+        </section>
       </main>
     );
   }
@@ -46,14 +52,14 @@ Home.propTypes = {
   }).isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   route: {
     previous: state.route.previous,
   },
 });
 
 const mapDispatchToProps = {
-  setCurrentRoute: route => setCurrentRoute(route),
+  setCurrentRoute: (route) => setCurrentRoute(route),
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
