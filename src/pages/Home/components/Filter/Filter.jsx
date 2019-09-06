@@ -97,7 +97,7 @@ class Filter extends Component {
   render() {
     const { data, filter } = this.props;
 
-    if (!data.authors || data.authors.length === 0) {
+    if (!data.authors || !data.authors.length) {
       return (
         <div className="filter-component">
           <LoadingIndicator />

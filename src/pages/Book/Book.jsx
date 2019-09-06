@@ -28,7 +28,7 @@ class Book extends Component {
     this.getMonthName = this.getMonthName.bind(this);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     const app = this;
     const { data, setCurrentRoute: setCurrentRouteDispatch } = this.props;
 
@@ -37,7 +37,7 @@ class Book extends Component {
     // Si en el estado no existe la lista de libros, hay que cargarlos...
     // Ésta condición sólo sucederá si el usuario ha ingresado al libro desde un enlace externo
     // y no desde el home
-    if (data.books.length === 0) {
+    if (!data.books || !data.books.length) {
       axios({
         method: configGraphCool.method,
         url: configGraphCool.url,
@@ -74,7 +74,7 @@ class Book extends Component {
     }
 
     // Actualizar el estado
-    if (!data.books.length) {
+    if (!data.books || !data.books.length) {
       const { setBookList: setBookListDispatch } = this.props;
 
       setBookListDispatch(books);

@@ -3,6 +3,9 @@
   padding-top: 1.5em;
   padding-bottom: 1.5em;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .filter-component > .container > .row > div > label > span {

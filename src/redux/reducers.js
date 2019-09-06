@@ -12,7 +12,7 @@ import {
   SET_CURRENT_ROUTE,
 } from './actions';
 
-function bookListReducer(state = [], action) {
+function bookListReducer(state = null, action) {
   if (action.type === SET_BOOK_LIST) {
     return action.payload;
   }

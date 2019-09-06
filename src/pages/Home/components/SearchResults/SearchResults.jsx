@@ -24,7 +24,7 @@ class SearchResults extends Component {
   componentDidMount() {
     const { data } = this.props;
 
-    if (!data.books || data.books.length === 0) {
+    if (!data.books || !data.books.length) {
       const app = this;
 
       axios({
@@ -83,7 +83,7 @@ class SearchResults extends Component {
     const { data } = this.props;
 
     // Si los libros aún no se han cargado, mostrar mensaje
-    if (!data.books || data.books === 0) {
+    if (!data.books) {
       return (
         <div className="search-results-component">
           <LoadingIndicator />
@@ -96,10 +96,22 @@ class SearchResults extends Component {
       <Book key={book.id} id={book.id} />
     ));
 
-    // Renderizar los libros
+    if (books.length) {
+      // Renderizar los libros
+      return (
+        <div className="search-results-component">
+          {books}
+        </div>
+      );
+    }
+
     return (
       <div className="search-results-component">
-        {books}
+        <p>
+          <span>Sin resultados en la búsqueda</span>
+          <br />
+          ¯\_(ツ)_/¯
+        </p>
       </div>
     );
   }

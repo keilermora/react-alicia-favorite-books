@@ -3,6 +3,25 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   padding-bottom: 4em;
-  min-height: 82vh;
+  min-height: calc(100vh - 136px);
+}
+
+@media screen and (max-width: 991px) {
+  .search-results-component {
+    min-height: calc(100vh - 224px);
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .search-results-component {
+    min-height: calc(100vh - 400px);
+  }
+}
+
+.search-results-component > p {
+  text-align: center;
+  z-index: 1;
+  cursor: default;
 }
