@@ -39,9 +39,9 @@ class Filter extends Component {
    * Si la lista de autores está vacía, hay que solicitar la data del
    * servidor para los autores, géneros y sagas
    */
-  componentWillMount() {
+  componentDidMount() {
     const { data } = this.props;
-    if (!data.authors || data.authors.length === 0) {
+    if (!data.authors || !data.authors.length) {
       const app = this;
 
       axios({
@@ -62,28 +62,36 @@ class Filter extends Component {
    * Actualizar el texto del filtro
    */
   updateFilterText(e) {
-    return this.props.setFilterText(e.target.value);
+    const { setFilterText: setFilterTextDispatch } = this.props;
+
+    return setFilterTextDispatch(e.target.value);
   }
 
   /**
    * Actualizar el autor del filtro
    */
   updateFilterAuthor(e) {
-    return this.props.setFilterAuthor(e.target.value);
+    const { setFilterAuthor: setFilterAuthorDispatch } = this.props;
+
+    return setFilterAuthorDispatch(e.target.value);
   }
 
   /**
    * Actualizar el género del filtro
    */
   updateFilterGenre(e) {
-    return this.props.setFilterGenre(e.target.value);
+    const { setFilterGenre: setFilterGenreDispatch } = this.props;
+
+    return setFilterGenreDispatch(e.target.value);
   }
 
   /**
    * Actualizar la saga del filtro
    */
   updateFilterSaga(e) {
-    return this.props.setFilterSaga(e.target.value);
+    const { setFilterSaga: setFilterSagaDispatch } = this.props;
+
+    return setFilterSagaDispatch(e.target.value);
   }
 
   render() {
@@ -98,17 +106,17 @@ class Filter extends Component {
     }
 
     // Obtener autores
-    const authors = data.authors.map(author => (
+    const authors = data.authors.map((author) => (
       <option key={author.id} value={author.id}>{author.name}</option>
     ));
 
     // Obtener géneros
-    const genres = data.genres.map(genre => (
+    const genres = data.genres.map((genre) => (
       <option key={genre.id} value={genre.id}>{genre.name}</option>
     ));
 
     // Obtener sagas
-    const sagas = data.sagas.map(saga => (
+    const sagas = data.sagas.map((saga) => (
       <option key={saga.id} value={saga.id}>{saga.name}</option>
     ));
 
@@ -182,9 +190,13 @@ Filter.propTypes = {
     genre: PropTypes.string,
     saga: PropTypes.string,
   }).isRequired,
+  setFilterText: PropTypes.func.isRequired,
+  setFilterGenre: PropTypes.func.isRequired,
+  setFilterAuthor: PropTypes.func.isRequired,
+  setFilterSaga: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   data: {
     authors: state.data.authors,
     genres: state.data.genres,
@@ -199,13 +211,13 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  setFilterText: text => setFilterText(text),
-  setFilterAuthor: author => setFilterAuthor(author),
-  setFilterGenre: genre => setFilterGenre(genre),
-  setFilterSaga: saga => setFilterSaga(saga),
-  setAuthorList: authors => setAuthorList(authors),
-  setGenreList: genres => setGenreList(genres),
-  setSagaList: sagas => setSagaList(sagas),
+  setFilterText: (text) => setFilterText(text),
+  setFilterAuthor: (author) => setFilterAuthor(author),
+  setFilterGenre: (genre) => setFilterGenre(genre),
+  setFilterSaga: (saga) => setFilterSaga(saga),
+  setAuthorList: (authors) => setAuthorList(authors),
+  setGenreList: (genres) => setGenreList(genres),
+  setSagaList: (sagas) => setSagaList(sagas),
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Filter);
