@@ -21,7 +21,7 @@ class SearchResults extends Component {
   /**
    * Si la lista de libros está vacía, hay que solicitar la data del servidor
    */
-  componentWillMount() {
+  componentDidMount() {
     const { data } = this.props;
 
     if (!data.books || data.books.length === 0) {
@@ -51,28 +51,28 @@ class SearchResults extends Component {
     // Filtrar si hay algún autor seleccionado
     if (filter.author !== '') {
       filteredBooks = filteredBooks
-        .filter(book => book.author.id
+        .filter((book) => book.author.id
           .includes(filter.author));
     }
 
     // Filtrar si hay algún género seleccionado
     if (filter.genre !== '') {
       filteredBooks = filteredBooks
-        .filter(book => book.genre.id
+        .filter((book) => book.genre.id
           .includes(filter.genre));
     }
 
     // Filtrar si hay alguna saga seleccionada
     if (filter.saga !== '') {
       filteredBooks = filteredBooks
-        .filter(book => book.saga.id
+        .filter((book) => book.saga.id
           .includes(filter.saga));
     }
 
     // Filtrar si el texto del filtro no se encuentre vacío.
     if (filter.text !== '') {
       filteredBooks = filteredBooks
-        .filter(book => book.title.toLowerCase()
+        .filter((book) => book.title.toLowerCase()
           .includes(filter.text.toLowerCase()));
     }
 
@@ -92,7 +92,7 @@ class SearchResults extends Component {
     }
 
     // Filtrar los libros
-    const books = this.filterBooks(data.books).map(book => (
+    const books = this.filterBooks(data.books).map((book) => (
       <Book key={book.id} id={book.id} />
     ));
 
@@ -136,7 +136,7 @@ SearchResults.propTypes = {
   }).isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   data: {
     books: state.data.books,
   },
@@ -150,7 +150,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  setBookList: list => setBookList(list),
+  setBookList: (list) => setBookList(list),
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchResults);
