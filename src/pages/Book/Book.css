@@ -16,44 +16,110 @@
   text-align: center;
 }
 
-.book-page > .container > .row > div > img {
-  width: 100%;
+.book-page > .container > .grid {
+  display: grid;
 }
 
-.book-page > .container > .row > div > h1 {
+.book-page > .container > .grid > .book-image-cell {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: span 2;
+}
+
+@media only screen and (max-width: 991px) {
+  .book-page > .container > .grid > .book-image-cell {
+    grid-row-end: 1;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .book-page > .container > .grid > .book-image-cell {
+    grid-column-end: span 2;
+  }
+}
+
+.book-page > .container > .grid > .book-image-cell > img {
+  width: 100%;
+  max-width: 350px;
+}
+
+.book-page > .container > .grid > .book-info-cell {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  padding-left: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .book-page > .container > .grid > .book-info-cell {
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    padding-top: 1.5em;
+  }
+}
+
+.book-page > .container > .grid > .book-info-cell > h1 {
   font-family: 'Dancing Script', cursive;
   font-weight: bold;
 }
 
-@media only screen and (max-width: 767px) {
-  .book-page > .container > .row > div > h1 {
-    margin-top: 1em;
-  }
-}
-
-.book-page > .container > .row > div > h6 > .label-title {
+.book-page > .container > .grid > .book-info-cell > h6 > .label-title {
   font-weight: bold;
 }
 
-.book-page > .container > .row > div > h6 > .label-info {
+.book-page > .container > .grid > .book-info-cell > h6 > .label-info {
   font-weight: normal;
   margin-left: 0.5em;
 }
 
-.book-page > .container > .row > div > p {
-  padding-top: 2em;
-  text-indent: 2em;
-  text-align: justify;
+.book-page > .container > .grid > .book-summary-cell {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  padding-left: 1.5em;
 }
 
-.book-page > .container > .row > div > p::first-letter {
+@media only screen and (max-width: 991px) {
+  .book-page > .container > .grid > .book-summary-cell {
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    padding-left: 0;
+    padding-top: 1.5em;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .book-page > .container > .grid > .book-summary-cell {
+    grid-row-start: 3;
+    grid-row-end: 3;
+  }
+}
+
+
+.book-page > .container > .grid > .book-summary-cell > p {
+  padding-bottom: 1em;
+  text-indent: 2em;
+  text-align: justify;
+  margin-bottom: 0;
+}
+
+.book-page > .container > .grid > .book-summary-cell > p::first-letter {
   font-family: 'Dancing Script', cursive;
   font-size: 200%;
   font-weight: bold;
   line-height: 0;
 }
 
-.book-page > .container > .row > div > a > button {
+.book-page > .container > .grid > .book-summary-cell > a > button {
   background-color: rgb(237, 54, 85) !important;
   border: none !important;
   box-shadow: initial !important;
@@ -61,20 +127,7 @@
   transition: 0.2s;
 }
 
-.book-page > .container > .row > div > a > button:hover {
+.book-page > .container > .grid > .book-summary-cell > a > button:hover {
   background-color: rgb(255, 249, 200) !important;
   color: rgb(237, 54, 85) !important;
-}
-
-.book-page > .container > p {
-  text-indent: 2em;
-  margin-bottom: 0;
-  padding-bottom: 1em;
-}
-
-.book-page > .container > p::first-letter {
-  font-family: 'Dancing Script', cursive;
-  font-size: 200%;
-  font-weight: bold;
-  line-height: 0;
 }

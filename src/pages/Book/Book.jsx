@@ -28,37 +28,11 @@ class Book extends Component {
     this.getMonthName = this.getMonthName.bind(this);
   }
 
-  /**
-   * Obtener la información del libro, de acuerdo a la base de datos "local" de libros
-   * @param {any} books Lista de libros
-   */
-  getBookInfo(books) {
-    const { data } = this.props;
-    this.book = books.find(book => book.id === this.bookId);
-
-    if (this.book) {
-      this.book.exists = true;
-
-      // Separar la fecha de publicación del libro, el cual tiene formato yyyy-dd-mm
-      this.publishedAt = {
-        day: this.book.publishedAt.slice(8, 10),
-        month: this.getMonthName(this.book.publishedAt.slice(5, 7)),
-        year: this.book.publishedAt.slice(0, 4),
-      };
-    } else {
-      this.book = { exists: false };
-    }
-
-    // Actualizar el estado
-    if (data.books.length === 0) {
-      this.props.setBookList(books);
-    }
-  }
-
-  componentWillMount() {
-    this.props.setCurrentRoute('Book');
+  componentDidMount() {
     const app = this;
-    const { data } = this.props;
+    const { data, setCurrentRoute: setCurrentRouteDispatch } = this.props;
+
+    setCurrentRouteDispatch('Book');
 
     // Si en el estado no existe la lista de libros, hay que cargarlos...
     // Ésta condición sólo sucederá si el usuario ha ingresado al libro desde un enlace externo
@@ -75,6 +49,35 @@ class Book extends Component {
         });
     } else {
       app.getBookInfo(app.props.data.books);
+    }
+  }
+
+  /**
+   * Obtener la información del libro, de acuerdo a la base de datos "local" de libros
+   * @param {any[]} books Lista de libros
+   */
+  getBookInfo(books) {
+    const { data } = this.props;
+    this.book = books.find((book) => book.id === this.bookId);
+
+    if (this.book) {
+      this.book.exists = true;
+
+      // Separar la fecha de publicación del libro, el cual tiene formato yyyy-dd-mm
+      this.publishedAt = {
+        day: this.book.publishedAt.slice(8, 10),
+        month: this.getMonthName(this.book.publishedAt.slice(5, 7)),
+        year: this.book.publishedAt.slice(0, 4),
+      };
+    } else {
+      this.book = { exists: false };
+    }
+
+    // Actualizar el estado
+    if (!data.books.length) {
+      const { setBookList: setBookListDispatch } = this.props;
+
+      setBookListDispatch(books);
     }
   }
 
@@ -102,7 +105,9 @@ class Book extends Component {
    * Si el usuario cambia la vista, actualizar la ruta
    */
   updateRoute() {
-    return this.props.setPreviousRoute('Book');
+    const { setPreviousRoute: setPreviousRouteDispatch } = this.props;
+
+    return setPreviousRouteDispatch('Book');
   }
 
   render() {
@@ -123,11 +128,11 @@ class Book extends Component {
       return (
         <div className="book-page">
           <div className="container">
-            <div className="row">
-              <div className="col-sm-12 col-md-3 col-lg-4">
+            <div className="grid">
+              <div className="book-image-cell">
                 <img src={this.book.imageUrl} alt={this.book.title} />
               </div>
-              <div className="col-sm-12 col-md-9 col-lg-8">
+              <div className="book-info-cell">
                 <h1>{this.book.title}</h1>
                 <h6>
                   <span className="label-title">Autor(a):</span>
@@ -151,6 +156,8 @@ class Book extends Component {
                   <span className="label-title">Saga:</span>
                   <span className="label-info">{this.book.saga.name}</span>
                 </h6>
+              </div>
+              <div className="book-summary-cell">
                 <p>{this.book.summary}</p>
                 <Link to="/">
                   <button type="button" className="btn" onClick={this.updateRoute}>
@@ -210,18 +217,21 @@ Book.propTypes = {
       }),
     })),
   }).isRequired,
+  setBookList: PropTypes.func.isRequired,
+  setCurrentRoute: PropTypes.func.isRequired,
+  setPreviousRoute: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   data: {
     books: state.data.books,
   },
 });
 
 const mapDispatchToProps = {
-  setBookList: list => setBookList(list),
-  setPreviousRoute: route => setPreviousRoute(route),
-  setCurrentRoute: route => setCurrentRoute(route),
+  setBookList: (list) => setBookList(list),
+  setPreviousRoute: (route) => setPreviousRoute(route),
+  setCurrentRoute: (route) => setCurrentRoute(route),
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Book);
