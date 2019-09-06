@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Waypoint } from 'react-waypoint';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // Componentes
@@ -19,15 +20,19 @@ class About extends Component {
     this.updateRoute = this.updateRoute.bind(this);
   }
 
-  componentWillMount() {
-    this.props.setCurrentRoute('About');
+  componentDidMount() {
+    const { setCurrentRoute: setCurrentRouteDispatch } = this.props;
+
+    setCurrentRouteDispatch('About');
   }
 
   /**
    * Si el usuario cambia la vista, actualizar
    */
   updateRoute() {
-    this.props.setPreviousRoute('About');
+    const { setPreviousRoute: setPreviousRouteDispatch } = this.props;
+
+    setPreviousRouteDispatch('About');
   }
 
   /**
@@ -113,9 +118,14 @@ class About extends Component {
   }
 }
 
+About.propTypes = {
+  setCurrentRoute: PropTypes.func.isRequired,
+  setPreviousRoute: PropTypes.func.isRequired,
+};
+
 const mapDispatchToProps = {
-  setPreviousRoute: route => setPreviousRoute(route),
-  setCurrentRoute: route => setCurrentRoute(route),
+  setPreviousRoute: (route) => setPreviousRoute(route),
+  setCurrentRoute: (route) => setCurrentRoute(route),
 };
 
 export default connect(null, mapDispatchToProps)(About);
