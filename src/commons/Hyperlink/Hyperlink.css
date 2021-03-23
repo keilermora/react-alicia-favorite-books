@@ -1,8 +1,0 @@
-.hyperlink {
-  transition: all 200ms;
-}
-
-.hyperlink:hover {
-  text-decoration: none;
-  color: rgb(237, 54, 85);
-}
