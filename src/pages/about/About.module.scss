@@ -1,0 +1,72 @@
+.about {
+  background-image: url(../../assets/images/sakura.png);
+  background-color: rgb(240, 248, 255);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+  .project {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      cursor: default;
+      font-family: 'Dancing Script', cursive;
+      margin-bottom: 1em;
+      pointer-events: none;
+    }
+    
+    p {
+      cursor: default;
+      text-align: justify;
+      text-indent: 2em;
+  
+      &::first-letter {
+        font-family: 'Dancing Script', cursive;
+        font-size: 200%;
+        line-height: 0em;
+      }
+      
+      a {
+        transition: all 200ms;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: none;
+          color: rgb(237, 54, 85);
+        }
+      }
+    }
+    
+    .button {
+      background-color: rgb(237, 54, 85);
+      color: rgb(240, 248, 255);
+  
+      :hover {
+        background-color: rgb(240, 248, 255);
+        color: rgb(237, 54, 85);
+      }
+  
+      &:active,
+      &:focus {
+        box-shadow: 0 0 0 0.2rem rgba(237, 54, 85, 0.5);
+      }
+    }
+  }
+  
+  .dedication {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+      cursor: default;
+      font-family: 'Dancing Script', cursive;
+      transition: 750ms;
+      text-align: center;
+    }
+  }
+}
