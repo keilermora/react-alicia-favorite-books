@@ -1,41 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Open+Sans');
-
-@import 'bootstrap/scss/bootstrap-grid';
-
-* {
-  font-family: 'Open Sans', sans-serif;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.fadeIn {
-  animation-name: fadeIn;
-  animation-duration: 750ms;
-  transition-duration: 750ms;
-  animation-iteration-count: 1;
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-  }
-}
-
-.fadeOut {
-  animation-name: fadeOut;
-  animation-duration: 750ms;
-  transition-duration: 750ms;
-  animation-iteration-count: 1;
-}
+/**
+ * Patrón de diseño 7-1.
+ * @see 
+ */
+@import 'assets/styles/main.scss';

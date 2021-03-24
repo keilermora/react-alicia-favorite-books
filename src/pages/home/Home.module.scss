@@ -1,3 +1,5 @@
+@import '../../assets/styles/utils/colors';
+
 .home {
   background-image: url(../../assets/images/sakura.png);
   background-attachment: fixed;
@@ -5,16 +7,15 @@
 
   .title {
     background: inherit;
-    background-color: rgb(121, 247, 104);
+    background-color: $screaming-green;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-  
+
     h1 {
-      color: rgb(0, 64, 0);
       cursor: default;
       font-family: 'Dancing Script', cursive;
       font-size: 4rem;
@@ -22,20 +23,20 @@
       pointer-events: none;
       text-shadow: 1px 1px 2px rgb(121, 119, 120);
     }
-    
+
     img {
       pointer-events: none;
     }
   }
-  
-  .searchResults {
+
+  .books {
     background: inherit;
-    background-color: rgb(255, 166, 143);
+    background-color: $mona-lista;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     padding-bottom: 4em;
     min-height: calc(100vh);
-  }  
+  }
 }

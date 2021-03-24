@@ -9,31 +9,31 @@ function About() {
         <h1>Alice&#39;s Favorite Books</h1>
         <p>
           Sitio web elaborado por
-          &nbsp;
+          {' '}
           <a className="hyperlink" href="https://www.linkedin.com/in/keilermora/" target="_blank" rel="noopener noreferrer">
             Keiler Mora
           </a>
-          &nbsp;
+          {' '}
           con fines demostrativos. El proyecto fue desarrollado usando las librerías de JavaScript
-          &nbsp;
+          {' '}
           <a className="hyperlink" href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">
             React
           </a>
-          &nbsp;
+          {' '}
           y
-          &nbsp;
+          {' '}
           <a className="hyperlink" href="https://redux.js.org/.org/" target="_blank" rel="noopener noreferrer">
             Redux
           </a>
-          &nbsp;
+          {' '}
           para crear la interfaz de usuario. El código fuente está disponible en
-          &nbsp;
+          {' '}
           <a className="hyperlink" href="https://github.com/keilermora/alicias-favorite-books" target="_blank" rel="noopener noreferrer">
             Github
           </a>
           .
         </p>
-        <Link to="/" className={styles.button}>
+        <Link to="/" className="button">
           Volver
         </Link>
       </div>

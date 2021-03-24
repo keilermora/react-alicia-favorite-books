@@ -10,7 +10,7 @@ function Home() {
           <Panda width="128" height="120"/>
         </div>
       </section>
-      <section className={styles.searchResults}>
+      <section className={styles.books}>
         <div className="container">
           <h1>Hola</h1>
         </div>

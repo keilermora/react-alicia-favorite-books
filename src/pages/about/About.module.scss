@@ -1,6 +1,9 @@
+@import '../../assets/styles/base/typography';
+@import '../../assets/styles/utils/colors';
+
 .about {
   background-image: url(../../assets/images/sakura.png);
-  background-color: rgb(240, 248, 255);
+  background-color: $alice-blue;
   background-attachment: fixed;
   background-repeat: no-repeat;
 
@@ -13,49 +16,44 @@
 
     h1 {
       cursor: default;
-      font-family: 'Dancing Script', cursive;
+      font-family: $dancing-script;
       margin-bottom: 1em;
       pointer-events: none;
     }
-    
+
     p {
       cursor: default;
       text-align: justify;
       text-indent: 2em;
-  
+
       &::first-letter {
-        font-family: 'Dancing Script', cursive;
+        font-family: $dancing-script;
         font-size: 200%;
         line-height: 0em;
       }
-      
+
       a {
         transition: all 200ms;
         text-decoration: none;
 
         &:hover {
           text-decoration: none;
-          color: rgb(237, 54, 85);
+          color: $amaranth;
         }
       }
     }
-    
-    .button {
-      background-color: rgb(237, 54, 85);
-      color: rgb(240, 248, 255);
+
+    & > a {
+      background-color: $amaranth;
+      color: $alice-blue;
   
-      :hover {
-        background-color: rgb(240, 248, 255);
-        color: rgb(237, 54, 85);
-      }
-  
-      &:active,
-      &:focus {
-        box-shadow: 0 0 0 0.2rem rgba(237, 54, 85, 0.5);
+      &:hover {
+        background-color: $alice-blue;
+        color: $amaranth;
       }
     }
   }
-  
+
   .dedication {
     min-height: 100vh;
     display: flex;
@@ -64,7 +62,8 @@
 
     h3 {
       cursor: default;
-      font-family: 'Dancing Script', cursive;
+      font-family: $dancing-script;
+      font-weight: normal;
       transition: 750ms;
       text-align: center;
     }

@@ -1,0 +1,36 @@
+@import '../../assets/styles/base/typography';
+@import '../../assets/styles/utils/colors';
+
+.notFound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: $black;
+  color: $alice-blue;
+
+  .content {
+    text-align: center;
+
+    h5 {
+      font-weight: normal;
+    }
+
+    h3 {
+      font-family: $dancing-script;
+      font-weight: normal;
+      margin-bottom: 1em;
+    }
+  
+    a {
+      background-color: $amaranth;
+      color: $alice-blue;
+      transition: 0.2s;
+  
+      &:hover {
+        background-color: $black;
+        color: $amaranth;
+      }
+    }
+  }
+}
