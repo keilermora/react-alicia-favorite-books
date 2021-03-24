@@ -1,6 +1,7 @@
 import './App.scss';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+import ScrollToTop from './commons/scroll-to-top/ScrollToTop';
 import Navbar from './commons/navbar/Navbar';
 import Home from './pages/home/Home'
 import About from './pages/about/About'
@@ -12,6 +13,7 @@ function App() {
       <div>
         <Navbar />
 
+        <ScrollToTop />
         <Switch>
           <Route exact path="/">
             <Home />
