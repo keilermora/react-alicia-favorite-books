@@ -38,7 +38,7 @@ function About() {
         </Link>
       </div>
       <div className={styles.dedication}>
-        <p>
+        <div>
           <ScrollAnimation animateIn="fadeIn" animateOut="fadeOut">
             <h3>- I&#39;ll be here...</h3>
           </ScrollAnimation>
@@ -62,7 +62,7 @@ function About() {
               I promise.
             </h3>
           </ScrollAnimation>
-        </p>
+        </div>
       </div>
     </div>
   </main>;
