@@ -1,5 +1,7 @@
-import './App.scss';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+import './App.scss';
 
 import ScrollToTop from './commons/scroll-to-top/ScrollToTop';
 import Navbar from './commons/navbar/Navbar';
@@ -9,11 +11,10 @@ import NotFound from './pages/not-found/NotFound'
 
 function App() {
   return (
-    <Router>
-      <div>
-        <Navbar />
-
+    <Provider store={store}>
+      <Router>
         <ScrollToTop />
+        <Navbar />
         <Switch>
           <Route exact path="/">
             <Home />
@@ -25,8 +26,8 @@ function App() {
             <NotFound />
           </Route>
         </Switch>
-      </div>
-    </Router>
+      </Router>
+    </Provider>
   );
 }
 
