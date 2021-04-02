@@ -1,0 +1,65 @@
+@import "../../assets/styles/base/typography";
+@import "../../assets/styles/utils/colors";
+
+.book {
+  min-height: 100vh;
+  background-color: $mona-lisa;
+  background-image: url(../../assets/images/sakura.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+  .bookContent {
+    margin-top: 2em;
+    background-color: $lemon-chiffon;
+    padding: 2em;
+    display: flex;
+
+    @media screen and (max-width: 767.98px) {
+      flex-direction: column;
+    }
+
+    img {
+      height: 100%;
+      position: sticky;
+      top: 80px;
+
+      @media screen and (max-width: 767.98px) {
+        position: inherit;
+        top: inherit;
+        width: 100%;
+      }
+    }
+
+    .info {
+      padding-left: 2em;
+
+      @media screen and (max-width: 767.98px) {
+        padding-left: 0;
+      }
+
+      h1 {
+        font-family: $dancing-script;
+      }
+
+      .bookDetails {
+        margin-bottom: 1.5rem;
+
+        .label {
+          font-weight: bold;
+        }
+      }
+
+
+      p {
+        text-indent: 2em;
+        text-align: justify;
+
+        &:first-child::first-letter {
+          font-size: 2rem;
+          font-family: $dancing-script;
+          line-height: 1rem;
+        }
+      }
+    }
+  }
+}

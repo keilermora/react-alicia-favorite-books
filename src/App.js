@@ -7,6 +7,7 @@ import ScrollToTop from './commons/scroll-to-top/ScrollToTop';
 import Navbar from './commons/navbar/Navbar';
 import Home from './pages/home/Home'
 import About from './pages/about/About'
+import Book from './pages/book/Book';
 import NotFound from './pages/not-found/NotFound'
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/book/:id">
+            <Book />
           </Route>
           <Route path="*">
             <NotFound />

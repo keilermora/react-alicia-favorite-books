@@ -4,10 +4,9 @@
   background-image: url(../../assets/images/sakura.png);
   background-attachment: fixed;
   background-repeat: no-repeat;
+  background-color: $screaming-green;
 
   .title {
-    background: inherit;
-    background-color: $screaming-green;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -31,11 +30,10 @@
 
   .books {
     background: inherit;
-    background-color: $mona-lista;
+    background-color: $mona-lisa;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
     padding-bottom: 4em;
     min-height: calc(100vh);
   }
