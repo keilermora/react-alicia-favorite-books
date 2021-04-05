@@ -9,6 +9,7 @@ import Home from './pages/home/Home'
 import About from './pages/about/About'
 import Book from './pages/book/Book';
 import NotFound from './pages/not-found/NotFound'
+import ParticlesBackground from './commons/particles-background/ParticlesBackground';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <NotFound />
           </Route>
         </Switch>
+        <ParticlesBackground />
       </Router>
     </Provider>
   );

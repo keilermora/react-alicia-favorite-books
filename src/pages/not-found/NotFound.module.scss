@@ -11,20 +11,23 @@
 
   .content {
     text-align: center;
+    position: relative;
+    z-index: 1;
 
-    h5 {
-      font-weight: normal;
-    }
+    p {
+      margin-bottom: 2em;
 
-    h3 {
-      font-family: $dancing-script;
-      font-weight: normal;
-      margin-bottom: 1em;
+      span {
+        font-family: $dancing-script;
+        font-weight: normal;
+        font-size: 1.5rem;
+      }
     }
   
     a {
       background-color: $amaranth;
       color: $alice-blue;
+      display: inline-block;
       transition: 0.2s;
   
       &:hover {

@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import styles from "./BookList.module.scss";
 
 const BookList = () => {
   const books = useSelector(state => state.books);
@@ -58,9 +59,8 @@ const BookList = () => {
     )
   } else {
     const bookImages = filteredBooks.map(book => (
-      <Link to={`/book/${book.id}`}>
+      <Link key={book.id} to={`/book/${book.id}`}>
         <img
-          key={book.id}
           src={book.imageUrl}
           alt={book.title}
           width={226}
@@ -70,7 +70,7 @@ const BookList = () => {
     ));
 
     return <>
-      <div>
+      <div className={styles.bookList}>
         {bookImages}
       </div>
     </>;

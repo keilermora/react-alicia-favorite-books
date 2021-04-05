@@ -6,8 +6,11 @@ function NotFound() {
   return <div className={styles.notFound}>
     <div className="container">
       <div className={styles.content}>
-        <h5>¿Querías ver una página diferente?</h5>
-        <h3>¡Aquí la tienes!</h3>
+        <p>
+          ¿Querías ver una página diferente?
+          <br/><br/>
+          <span>¡Aquí la tienes!</span>
+        </p>
         <Link to="/" className="button">
           Volver
         </Link>

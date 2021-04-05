@@ -13,6 +13,8 @@
     background-color: $lemon-chiffon;
     padding: 2em;
     display: flex;
+    position: relative;
+    z-index: 1;
 
     @media screen and (max-width: 767.98px) {
       flex-direction: column;

@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { SET_FILTER_AUTHOR, SET_FILTER_GENRE, SET_FILTER_SAGA, SET_FILTER_TEXT } from "../../redux/actions";
+import styles from './Filter.module.scss';
 
 function Filter() {
   const dispatch = useDispatch();
@@ -41,7 +42,7 @@ function Filter() {
   }
 
   return <>
-    <form>
+    <form className={styles.filter}>
       <div className="inputGroup">
         <label htmlFor="selectedAuthor">Autor</label>
         <select name="" id="selectedAuthor" onChange={e => selectAuthor(e)}>
