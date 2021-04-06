@@ -17,9 +17,30 @@
     display: flex;
     position: relative;
     z-index: 1;
+    position: relative;
 
     @media screen and (max-width: 767.98px) {
       flex-direction: column;
+      padding-top: 3em;
+    }
+
+    .goBackButton {
+      position: absolute;
+      top: 2em;
+      right: 2em;
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+      color: $stiletto;
+      transition: 250ms;
+
+      @media screen and (max-width: 767.98px) {
+        top: 1em;
+      }
+
+      &:hover {
+        color: $amaranth;
+      }
     }
 
     img {
