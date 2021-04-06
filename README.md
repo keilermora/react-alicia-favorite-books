@@ -36,16 +36,14 @@ $ serve -s build
 
 ### Referencias
 
-- [**Axios**](https://github.com/axios/axios): Promise based HTTP client for the browser and node.js.
 - [**Bootstrap**](https://getbootstrap.com): The most popular HTML, CSS, and JS library in the world.
-- [**Eslint Config Airbnb**](https://www.npmjs.com/package/eslint-config-airbnb): A mostly reasonable approach to JavaScript.
-- [**Font Awesome**](https://fontawesome.com): The world’s most popular and easiest to use icon set.
-- [**React**](https://facebook.github.io/react): A Javascript library for building user interfaces.
+- [**Firebase**](https://firebase.google.com/):Firebase helps you build and run successful apps.
+- [**React**](https://github.com/facebook/react): A Javascript library for building user interfaces.
+- [**React Animate on Scroll**](https://github.com/dbramwell/react-animate-on-scroll): React component to animate elements on scroll.
 - [**React DOM**](https://facebook.github.io/react/docs/react-dom.html): Provides DOM-specific methods that can be used at the top level of your app and as an escape hatch to get outside of the React model if you need to.
 - [**React Particles Js**](https://github.com/Wufe/react-particles-js): Implementation in Typescript + React of [Particles.js](https://github.com/VincentGarreau/particles.js) by [Vincent Garreau](https://github.com/VincentGarreau).
 - [**React Redux**](https://github.com/reactjs/react-redux): Official React bindings for [Redux](https://github.com/reactjs/redux).
-- [**React Router DOM**](https://reacttraining.com/react-router/web/guides/philosophy): Is a collection of navigational components that compose declaratively with your application.
+- [**React Router DOM**](https://reactrouter.com/web/guides/philosophy): Is a collection of navigational components that compose declaratively with your application.
 - [**React Scripts**](https://github.com/facebook/create-react-app#readme): Create React apps with no build configuration.
-- [**React Spinners**](https://github.com/davidhu2000/react-spinners): A collection of loading spinners with React.js based on [Halogen](https://github.com/yuanyan/halogen).
-- [**React Waypoint**](https://github.com/brigade/react-waypoint): A React component to execute a function whenever you scroll to an element.
 - [**Redux**](http://redux.js.org/): A predictable state container for JavaScript apps.
+- [**Redux Thunk**](https://github.com/reduxjs/redux-thunk): Thunk middleware for Redux.
