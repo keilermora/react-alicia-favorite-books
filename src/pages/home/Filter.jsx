@@ -43,28 +43,28 @@ function Filter() {
 
   return <>
     <form className={styles.filter}>
-      <div className="inputGroup">
+      <div className={styles.inputGroup}>
         <label htmlFor="selectedAuthor">Autor</label>
         <select name="" id="selectedAuthor" onChange={e => selectAuthor(e)}>
           <option value="">Todos</option>
           {authorOptions}
         </select>
       </div>
-      <div className="inputGroup">
+      <div className={styles.inputGroup}>
         <label htmlFor="selectedGenre">Género</label>
         <select name="" id="selectedGenre" onChange={e => selectGenre(e)}>
           <option value="">Todos</option>
           {genreOptions}
         </select>
       </div>
-      <div className="inputGroup">
+      <div className={styles.inputGroup}>
         <label htmlFor="selectedSaga">Saga</label>
         <select name="" id="selectedSaga" onChange={e => selectSaga(e)}>
           <option value="">Todas</option>
           {sagaOptions}
         </select>
       </div>
-      <div className="inputGroup">
+      <div className={styles.inputGroup}>
         <label htmlFor="filterText">Título</label>
         <input id="filterText" type="text" value={filterText} onChange={e => setFilterText(e)}/>
       </div>

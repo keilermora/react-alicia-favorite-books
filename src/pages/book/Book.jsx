@@ -42,9 +42,7 @@ const Book = () => {
               <span className={styles.label}>Saga:</span> <span>{bookData.saga}</span><br/>
               <span className={styles.label}>Género:</span> <span>{bookData.genre}</span>
             </div>
-            <p>
-              {summary}
-            </p>
+            {summary}
           </div>
         </div>
       </div>

@@ -59,14 +59,16 @@ const BookList = () => {
     )
   } else {
     const bookImages = filteredBooks.map(book => (
-      <Link key={book.id} to={`/book/${book.id}`}>
-        <img
-          src={book.imageUrl}
-          alt={book.title}
-          width={226}
-          height={350}
-        />
-      </Link>
+      <div className={styles.book} key={book.id}>
+        <Link to={`/book/${book.id}`}>
+          <img
+            src={book.imageUrl}
+            alt={book.title}
+            width={226}
+            height={350}
+          />
+        </Link>
+      </div>
     ));
 
     return <>
