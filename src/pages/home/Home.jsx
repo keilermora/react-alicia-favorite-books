@@ -5,6 +5,7 @@ import { SET_FIREBASE_DATA } from "../../redux/actions";
 import styles from "./Home.module.scss";
 import BookList from "./BookList";
 import Filter from "./Filter";
+import Footer from "../../commons/footer/Footer";
 
 const fetchBooks = async(dispatch) => {
   let books = [];
@@ -54,6 +55,7 @@ function Home() {
             <BookList />
           </div>
         </div>
+        <Footer />
       </section>
     </main>
   </>;

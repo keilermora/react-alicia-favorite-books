@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { useSelector, useStore } from "react-redux";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router";
+import Footer from "../../commons/footer/Footer";
 import firebase from "../../firebase";
 import styles from "./Book.module.scss";
 
@@ -46,6 +47,7 @@ const Book = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </main>
   </>;
 }
