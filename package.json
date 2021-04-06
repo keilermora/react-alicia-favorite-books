@@ -1,6 +1,6 @@
 {
-  "name": "alices-favorite-books",
-  "version": "0.1.0",
+  "name": "alicia-s-favorite-books",
+  "version": "2.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
