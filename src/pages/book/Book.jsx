@@ -31,6 +31,9 @@ const Book = () => {
   </>;
   }
 
+  const publishedAtDate = new Date(1970, 0, 1); // Epoch
+  publishedAtDate.setSeconds(bookData.publishedAt.seconds);
+
   const summary = bookData.summary.split('\\n').map((str, index) => <p key={index}>{str}</p>);
 
   return <>
@@ -42,7 +45,7 @@ const Book = () => {
           <div className={styles.info}>
             <h1>{bookData.title}</h1>
             <div className={styles.bookDetails}>
-              <span className={styles.label}>Fecha publicación:</span> <span>{bookData.publishedAt.seconds}</span><br/>
+              <span className={styles.label}>Fecha publicación:</span> <span>{publishedAtDate.toLocaleDateString()}</span><br/>
               <span className={styles.label}>Saga:</span> <span>{bookData.saga}</span><br/>
               <span className={styles.label}>Género:</span> <span>{bookData.genre}</span>
             </div>
