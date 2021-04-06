@@ -10,6 +10,7 @@ const Book = () => {
   let { id } = useParams();
   const books = useSelector(state => state.books);
   const [ bookData, setBookData ] = useState();
+  const [ notFound, setNotFound ] = useState(false);
   const history = useHistory();
 
   useEffect(() => {
@@ -18,17 +19,47 @@ const Book = () => {
         setBookData(books.find(book => book.id === id));
       } else {
         const querySnapshot = await firebase.collection('books').doc(id).get();
-        setBookData(querySnapshot.data());
+        const bookData = querySnapshot.data();
+
+        if(bookData) {
+          setBookData(bookData);
+        } else {
+          setNotFound(true);
+        }
       }
     };
  
     fetchData();
   }, [books, id]);
 
+  if(notFound) {
+    return <>
+      <main className={styles.book}>
+        <div className="container">
+          <div className={styles.bookContent}>
+            <p>
+              El libro seleccionado no se encuentra dentro de la lista de favoritos.
+              Tal vez Alicia cambió de opinión... ¯\_(ツ)_/¯
+            </p>
+          </div>
+        </div>
+      </main>
+    </>;
+  }
+
+
   if(!bookData) {
     return <>
-    <h1>Hola {id}</h1>
-  </>;
+      <main className={styles.book}>
+        <div className="container">
+          <div className={styles.bookContent}>
+            <p>
+              Cargando...
+            </p>
+          </div>
+        </div>
+      </main>
+    </>;
   }
 
   const publishedAtDate = new Date(1970, 0, 1); // Epoch
