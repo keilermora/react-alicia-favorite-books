@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { SET_FILTER_AUTHOR, SET_FILTER_GENRE, SET_FILTER_SAGA, SET_FILTER_TEXT } from "../../redux/actions";
-import styles from './Filter.module.scss';
+import styles from "./Filter.module.scss";
 
 function Filter() {
   const dispatch = useDispatch();
@@ -45,21 +45,21 @@ function Filter() {
     <form className={styles.filter}>
       <div className={styles.inputGroup}>
         <label htmlFor="selectedAuthor">Autor</label>
-        <select name="" id="selectedAuthor" onChange={e => selectAuthor(e)}>
+        <select id="selectedAuthor" onChange={e => selectAuthor(e)}>
           <option value="">Todos</option>
           {authorOptions}
         </select>
       </div>
       <div className={styles.inputGroup}>
         <label htmlFor="selectedGenre">Género</label>
-        <select name="" id="selectedGenre" onChange={e => selectGenre(e)}>
+        <select id="selectedGenre" onChange={e => selectGenre(e)}>
           <option value="">Todos</option>
           {genreOptions}
         </select>
       </div>
       <div className={styles.inputGroup}>
         <label htmlFor="selectedSaga">Saga</label>
-        <select name="" id="selectedSaga" onChange={e => selectSaga(e)}>
+        <select id="selectedSaga" onChange={e => selectSaga(e)}>
           <option value="">Todas</option>
           {sagaOptions}
         </select>
