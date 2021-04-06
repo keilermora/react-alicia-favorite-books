@@ -19,7 +19,8 @@
     h1 {
       cursor: default;
       font-family: $dancing-script;
-      margin-bottom: 1em;
+      margin-top: 0;
+      margin-bottom: 0.5em;
       pointer-events: none;
     }
 
@@ -27,6 +28,7 @@
       cursor: default;
       text-align: justify;
       text-indent: 2em;
+      max-width: 680px;
 
       &::first-letter {
         font-family: $dancing-script;

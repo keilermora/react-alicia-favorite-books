@@ -6,9 +6,9 @@ function About() {
   return <main className={styles.about}>
     <div className="container">
       <div className={styles.project}>
-        <h1>Alice&#39;s Favorite Books</h1>
+        <h1>Alicia&#39;s Favorite Books</h1>
         <p>
-          Sitio web elaborado por
+          Aplicación web elaborada por
           {' '}
           <a className="hyperlink" href="https://www.linkedin.com/in/keilermora/" target="_blank" rel="noopener noreferrer">
             Keiler Mora
@@ -20,13 +20,18 @@ function About() {
             React
           </a>
           {' '}
-          y
+          (¡Hooks!) y
           {' '}
           <a className="hyperlink" href="https://redux.js.org/.org/" target="_blank" rel="noopener noreferrer">
             Redux
           </a>
           {' '}
-          para crear la interfaz de usuario. El código fuente está disponible en
+          para crear la interfaz de usuario, en comunicación con data alojada en
+          {' '}
+          <a className="hyperlink" href="https://firebase.google.com/" target="_blank" rel="noopener noreferrer">
+            Firebase
+          </a>
+          . El código fuente está disponible en
           {' '}
           <a className="hyperlink" href="https://github.com/keilermora/alicias-favorite-books" target="_blank" rel="noopener noreferrer">
             Github
