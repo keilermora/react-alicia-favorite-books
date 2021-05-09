@@ -14,7 +14,7 @@ import ParticlesBackground from './commons/particles-background/ParticlesBackgro
 function App() {
   return (
     <Provider store={store}>
-      <Router>
+      <Router basename="/alicia-s-favorite-books">
         <ScrollToTop />
         <Navbar />
         <Switch>
