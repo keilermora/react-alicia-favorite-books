@@ -7,6 +7,9 @@ function Filter() {
   const authors = useSelector(state => state.authors);
   const genres = useSelector(state => state.genres);
   const sagas = useSelector(state => state.sagas);
+  const selectedAuthor = useSelector(state => state.selectedAuthor);
+  const selectedGenre = useSelector(state => state.selectedGenre);
+  const selectedSaga = useSelector(state => state.selectedSaga);
   const filterText = useSelector(state => state.filterText);
 
   let authorOptions = [];
@@ -45,21 +48,21 @@ function Filter() {
     <form className={styles.filter}>
       <div className={styles.inputGroup}>
         <label htmlFor="selectedAuthor">Autor</label>
-        <select id="selectedAuthor" onChange={e => selectAuthor(e)}>
+        <select id="selectedAuthor" onChange={e => selectAuthor(e)} value={selectedAuthor}>
           <option value="">Todos</option>
           {authorOptions}
         </select>
       </div>
       <div className={styles.inputGroup}>
         <label htmlFor="selectedGenre">Género</label>
-        <select id="selectedGenre" onChange={e => selectGenre(e)}>
+        <select id="selectedGenre" onChange={e => selectGenre(e)} value={selectedGenre}>
           <option value="">Todos</option>
           {genreOptions}
         </select>
       </div>
       <div className={styles.inputGroup}>
         <label htmlFor="selectedSaga">Saga</label>
-        <select id="selectedSaga" onChange={e => selectSaga(e)}>
+        <select id="selectedSaga" onChange={e => selectSaga(e)} value={selectedSaga}>
           <option value="">Todas</option>
           {sagaOptions}
         </select>
