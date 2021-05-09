@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/alicia-s-favorite-books/static/css/main.d0965a04.chunk.css",
-    "main.js": "/alicia-s-favorite-books/static/js/main.d0f56127.chunk.js",
-    "main.js.map": "/alicia-s-favorite-books/static/js/main.d0f56127.chunk.js.map",
+    "main.js": "/alicia-s-favorite-books/static/js/main.5332b9a4.chunk.js",
+    "main.js.map": "/alicia-s-favorite-books/static/js/main.5332b9a4.chunk.js.map",
     "runtime-main.js": "/alicia-s-favorite-books/static/js/runtime-main.11c0fc0a.js",
     "runtime-main.js.map": "/alicia-s-favorite-books/static/js/runtime-main.11c0fc0a.js.map",
     "static/js/2.a6d623d6.chunk.js": "/alicia-s-favorite-books/static/js/2.a6d623d6.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.11c0fc0a.js",
     "static/js/2.a6d623d6.chunk.js",
     "static/css/main.d0965a04.chunk.css",
-    "static/js/main.d0f56127.chunk.js"
+    "static/js/main.5332b9a4.chunk.js"
   ]
 }
