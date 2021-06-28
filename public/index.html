@@ -2,34 +2,40 @@
 <html lang="es">
   <head>
     <!-- ensure proper document rendering -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <!-- essential -->
     <title>Los libros favoritos de Alicia | React</title>
-    <meta name="description" content="Para ella &hearts; Desarrollado por Keiler Mora, usando las librerías de JavaScript React y Redux para crear la interfaz de usuario.">
+    <meta
+      name="description"
+      content="Para ella &hearts; Desarrollado por Keiler Mora, usando las librerías de JavaScript React y Redux para crear la interfaz de usuario."
+    />
     <!-- links to information about the author of the document -->
-    <link rel="author" href="%PUBLIC_URL%/humans.txt">
+    <link rel="author" href="%PUBLIC_URL%/humans.txt" />
     <!-- name of web application -->
-    <meta name="application-name" content="Los libros favoritos de Alicia">
+    <meta name="application-name" content="Los libros favoritos de Alicia" />
     <!-- theme Color for Chrome, Firefox OS and Opera -->
-    <meta name="theme-color" content="#f0f8ff">
+    <meta name="theme-color" content="#f0f8ff" />
     <!-- behavior of search engine crawling and indexing -->
-    <meta name="robots" content="index,follow">
-    <meta name="googlebot" content="index,follow">
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow" />
     <!-- don't show the sitelinks search box -->
-    <meta name="google" content="nositelinkssearchbox">
+    <meta name="google" content="nositelinkssearchbox" />
     <!-- don't provide a translation for this document -->
-    <meta name="google" content="notranslate">
+    <meta name="google" content="notranslate" />
     <!-- completely opt out of DNS prefetching -->
-    <meta http-equiv="x-dns-prefetch-control" content="off">
+    <meta http-equiv="x-dns-prefetch-control" content="off" />
     <!-- Links to a JSON file that specifies "installation" credentials for the web applications -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <!-- icon -->
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <link rel="icon" sizes="192x192" href="%PUBLIC_URL%/panda.png">
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/panda.png">
-    <link rel="mask-icon" href="%PUBLIC_URL%/favicon.ico" color="#f0f8ff">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" sizes="192x192" href="%PUBLIC_URL%/panda.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/panda.png" />
+    <link rel="mask-icon" href="%PUBLIC_URL%/favicon.ico" color="#f0f8ff" />
     <!-- facebook open graph -->
     <meta property="og:url" content="https://keilermora.github.io/alicia-s-favorite-books/">
     <meta property="og:type" content="website">
@@ -37,27 +43,69 @@
     <meta property="og:description" content="Para ella &hearts; Desarrollado por Keiler Mora, usando las librerías de JavaScript React y Redux para crear la interfaz de usuario.">
     <meta property="og:locale" content="es_VE">
     <!-- twitter card -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:creator" content="@keilermora">
-    <meta name="twitter:url" content="https://keilermora.github.io/alicia-s-favorite-books/">
-    <meta name="twitter:title" content="Los libros favoritos de Alicia">
-    <meta name="twitter:description" content="Para ella &hearts; Desarrollado por Keiler Mora, usando las librerías de JavaScript React y Redux para crear la interfaz de usuario.">
-    <meta name="twitter:image" content="%PUBLIC_URL%/favicon.ico">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="@keilermora" />
+    <meta
+      name="twitter:url"
+      content="https://keilermora.github.io/alicia-s-favorite-books/"
+    />
+    <meta name="twitter:title" content="Los libros favoritos de Alicia" />
+    <meta
+      name="twitter:description"
+      content="Para ella &hearts; Desarrollado por Keiler Mora, usando las librerías de JavaScript React y Redux para crear la interfaz de usuario."
+    />
+    <meta name="twitter:image" content="%PUBLIC_URL%/favicon.ico" />
     <!-- disallow Twitter from using your site's info for personalization purposes -->
-    <meta name="twitter:dnt" content="on">
+    <meta name="twitter:dnt" content="on" />
     <!--  prevent people from saving things from your website -->
-    <meta name="pinterest" content="nopin">
+    <meta name="pinterest" content="nopin" />
     <!-- Apple iOS -->
-    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/panda.png">
-    <meta name="apple-mobile-web-app-title" content="Los libros favoritos de Alicia">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/panda.png" />
+    <meta
+      name="apple-mobile-web-app-title"
+      content="Los libros favoritos de Alicia"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <!-- set the base URL for all relative URLs within the document -->
-    <base href="/alicia-s-favorite-books">
+    <base href="/alicia-s-favorite-books" />
+
+    <!-- Start Single Page Apps for GitHub Pages -->
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      // This script checks to see if a redirect is present in the query string,
+      // converts it back into the correct url and adds it to the
+      // browser's history using window.history.replaceState(...),
+      // which won't cause the browser to attempt to load the new url.
+      // When the single page app is loaded further down in this file,
+      // the correct url will be waiting in the browser's history for
+      // the single page app to route accordingly.
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      })(window.location);
+    </script>
+    <!-- End Single Page Apps for GitHub Pages -->
   </head>
   <body>
-    <noscript>Debes habilitar JavaScript para poder visualizar la aplicación.</noscript>
+    <noscript
+      >Debes habilitar JavaScript para poder visualizar la aplicación.</noscript
+    >
     <div id="root"></div>
   </body>
 </html>
