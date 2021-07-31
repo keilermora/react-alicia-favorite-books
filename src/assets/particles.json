@@ -1,0 +1,28 @@
+{
+  "detectRetina": true,
+  "fpsLimit": 60,
+  "particles": {
+    "color": {
+      "value": "#ffffff"
+    },
+    "move": {
+      "enable": true,
+      "speed": 2,
+      "random": true
+    },
+    "number": {
+      "value": 40
+    },
+    "opacity": {
+      "value": 0.5,
+      "random": true
+    },
+    "shape": {
+      "type": "circle"
+    },
+    "size": {
+      "random": true,
+      "value": 50
+    }
+  }
+}

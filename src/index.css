@@ -1,13 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Open+Sans');
+
 body {
+  background-color: var(--alice-blue);
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  position: relative;
+  font-family: var(--open-sans);
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+main {
+  padding-top: 50px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px var(--black-alpha-3);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 14px;
+  background: var(--gray);
+  box-shadow: inset 0 0 6px rgba(185, 185, 185, 0.5);
+}
+
+:root {
+  --screaming-green: #79f768;
+  --stiletto: #862a3a;
+  --amaranth: #ed3655;
+  --mona-lisa: #ffa68f;
+  --lemon-chiffon: #fff9c8;
+  --alice-blue: #f0f8ff;
+  --gray: #818181;
+  --black: #000000;
+  --black-alpha-3: rgba(0, 0, 0, 0.3);
+  --white-alpha-1: rgba(255, 255, 255, 0.1);
+  --dancing-script: 'Dancing Script', cursive;
+  --open-sans: 'Open Sans', sans-serif;
 }

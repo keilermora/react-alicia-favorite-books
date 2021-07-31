@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
-const firebaseConfig = {
+const firebaseConfig: Object = {
   apiKey: 'AIzaSyB6UAap4ggzb5MfgbC3Sydyxv-eCvhZx00',
   authDomain: 'alicia-s-favorite-books.firebaseapp.com',
   projectId: 'alicia-s-favorite-books',

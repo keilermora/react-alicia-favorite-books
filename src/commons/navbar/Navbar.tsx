@@ -1,11 +1,13 @@
+import { FC, ReactElement } from 'react';
 import { Link } from 'react-router-dom';
+import Container from '../container/Container';
 
-import styles from './Navbar.module.scss';
+import styles from './Navbar.module.css';
 
-function Navbar() {
-  return <>
+const Navbar: FC = (): ReactElement => {
+  return (
     <nav className={styles.navbar}>
-      <div className="container">
+      <Container>
         <ul>
           <li>
             <Link to="/">Inicio</Link>
@@ -14,9 +16,9 @@ function Navbar() {
             <Link to="/about">Acerca de</Link>
           </li>
         </ul>
-      </div>
+      </Container>
     </nav>
-  </>;
-}
+  );
+};
 
 export default Navbar;

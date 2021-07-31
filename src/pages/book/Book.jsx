@@ -84,7 +84,6 @@ const Book = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </main>
   </>;
 }
