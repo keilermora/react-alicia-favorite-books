@@ -2,15 +2,11 @@
 
 Proyecto desarrollado en [React](https://facebook.github.io/react/), una librería de Javascript para construir interfaces de usuario.
 
----
-
 ## Requerimientos
 
 - [Node.js LTS](https://nodejs.org/es/download/)
 - [Yarn](https://classic.yarnpkg.com/en/docs/install)
 - [Serve](https://github.com/vercel/serve#readme) (Opcional)
-
----
 
 ## Iniciar el ambiente de desarrollo
 
@@ -23,8 +19,6 @@ $ yarn start
 
 La aplicación se iniciará en el navegador web por defecto, en la ruta `http://localhost:3000/`.
 
----
-
 ## Iniciar el ambiente de producción
 
 Las siguientes líneas de comandos crearán una versión optimizada de la aplicación en la carpeta `build`. Luego, levantará un servidor local en la ruta `http://localhost:5000` apuntando a dicha carpeta a través de [Serve](https://github.com/vercel/serve#readme).
@@ -33,8 +27,6 @@ Las siguientes líneas de comandos crearán una versión optimizada de la aplica
 $ yarn build
 $ serve -s build
 ```
-
----
 
 ## Referencias
 
