@@ -1,8 +1,8 @@
 import { FC, ReactElement } from 'react';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import AppState from '../../interfaces/AppState';
 import Book from '../../interfaces/Book';
+import BookListItem from './BookListItem';
 
 import styles from './BookList.module.css';
 
@@ -79,17 +79,7 @@ const BookList: FC = (): ReactElement => {
     return (
       <div className={styles.bookList}>
         {filteredBooks.map((book: Book) => (
-          <div className={styles.book} key={book.id}>
-            <Link to={`/book/${book.id}`}>
-              <img
-                src={book.imageUrl}
-                alt={book.title}
-                width={226}
-                height={350}
-                loading="lazy"
-              />
-            </Link>
-          </div>
+          <BookListItem key={book.id} book={book} />
         ))}
       </div>
     );
