@@ -1,0 +1,20 @@
+.notFound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--black);
+  color: var(--alice-blue);
+  text-align: center;
+}
+
+.notFound .content {
+  position: relative;
+  z-index: 1;
+}
+
+.notFound p span {
+  font-family: var(--dancing-script);
+  font-weight: normal;
+  font-size: var(--font-large);
+}

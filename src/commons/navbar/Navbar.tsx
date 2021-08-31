@@ -1,6 +1,6 @@
 import { FC, ReactElement } from 'react';
 import { Link } from 'react-router-dom';
-import Container from '../container/Container';
+import Container from '../Container/Container';
 
 import styles from './Navbar.module.css';
 

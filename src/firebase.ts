@@ -1,7 +1,7 @@
-import firebase from 'firebase/app';
-import 'firebase/firestore';
+import { FirebaseOptions, initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
 
-const firebaseConfig: Object = {
+const firebaseConfig: FirebaseOptions = {
   apiKey: 'AIzaSyB6UAap4ggzb5MfgbC3Sydyxv-eCvhZx00',
   authDomain: 'alicia-s-favorite-books.firebaseapp.com',
   projectId: 'alicia-s-favorite-books',
@@ -10,6 +10,7 @@ const firebaseConfig: Object = {
   appId: '1:700189519272:web:3cb7d6c518b0403714c19d',
 };
 
-firebase.initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
+const db = getFirestore();
 
-export default firebase.firestore();
+export default db;

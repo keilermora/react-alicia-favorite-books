@@ -1,0 +1,28 @@
+.bookList {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.book {
+  background-color: var(--lemon-chiffon);
+  padding: 12px;
+  margin-bottom: 12px;
+  transition: all 250ms;
+}
+
+.book a {
+  display: block;
+  line-height: 0;
+}
+
+.book a img {
+  transition: 250ms;
+}
+
+.book a img:hover {
+  transform: scale(102%);
+  box-shadow: 0 0 8px 2px var(--stiletto);
+}

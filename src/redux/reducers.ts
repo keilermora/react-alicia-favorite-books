@@ -1,3 +1,5 @@
+import { AnyAction, Reducer } from 'redux';
+import AppState from '../interfaces/AppState';
 import {
   SET_FILTER_TEXT,
   SET_FILTER_AUTHOR,
@@ -6,7 +8,7 @@ import {
   SET_FIREBASE_DATA,
 } from './actions';
 
-const initialState = {
+const initialState: AppState = {
   books: [],
   authors: [],
   genres: [],
@@ -18,12 +20,15 @@ const initialState = {
   selectedSaga: '',
 };
 
-const returnStateReducer = (state = initialState, action) => {
-  switch(action.type) {
+const returnStateReducer: Reducer = (
+  state: AppState = initialState,
+  action: AnyAction
+): AppState => {
+  switch (action.type) {
     case SET_FIREBASE_DATA:
       const { books, authors, genres, sagas } = action.payload;
-    
-      return { 
+
+      return {
         ...state,
         books,
         authors,

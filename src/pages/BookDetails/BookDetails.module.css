@@ -1,0 +1,85 @@
+.bookDetails {
+  min-height: 100vh;
+  background-color: var(--mona-lisa);
+  background-image: url(../../assets/images/sakura.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
+  padding-bottom: 100px;
+}
+
+.bookContent {
+  margin-top: 2em;
+  background-color: var(--lemon-chiffon);
+  padding: 2em;
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+
+@media screen and (max-width: 767.98px) {
+  .bookContent {
+    flex-direction: column;
+    padding-top: 4em;
+  }
+}
+
+.bookContent button {
+  position: absolute;
+  top: 2em;
+  right: 2em;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767.98px) {
+  .bookContent button {
+    top: 1em;
+  }
+}
+
+.bookContent img {
+  height: 100%;
+  position: sticky;
+  top: 80px;
+}
+
+@media screen and (max-width: 767.98px) {
+  .bookContent img {
+    position: inherit;
+    top: inherit;
+    width: 100%;
+  }
+}
+
+.info {
+  padding-left: 2em;
+}
+
+.info h1 {
+  font-family: var(--dancing-script);
+}
+
+@media screen and (max-width: 767.98px) {
+  .info {
+    padding-left: 0;
+  }
+}
+
+.info p {
+  text-indent: 2em;
+  text-align: justify;
+}
+
+.info p:first-child::first-letter {
+  font-size: 2rem;
+  font-family: var(--dancing-script);
+  line-height: 1rem;
+}
+
+.summary {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  font-weight: bold;
+}

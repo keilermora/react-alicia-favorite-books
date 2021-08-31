@@ -1,0 +1,60 @@
+.filter {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+@media screen and (max-width: 767.98px) {
+  .filter {
+    flex-wrap: wrap;
+  }
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+  width: 100%;
+}
+
+.inputGroup label {
+  color: var(--stiletto);
+  font-size: 1.75rem;
+  font-family: var(--dancing-script);
+}
+
+.inputGroup select {
+  background-color: var(--lemon-chiffon);
+  border-radius: 0.25rem;
+  border: 2px solid var(--lemon-chiffon);
+  color: var(--amaranth);
+  cursor: pointer;
+  transition: all 250ms;
+  height: calc(2.25rem + 2px);
+  padding: 0 0.75rem;
+  font-size: var(--font-medium);
+  font-family: var(--open-sans);
+}
+
+.inputGroup select:hover {
+  border-color: var(--amaranth);
+}
+
+.inputGroup input {
+  height: calc(2.25rem + 2px);
+  background-color: var(--lemon-chiffon);
+  border-radius: 0.25rem;
+  border: 2px solid var(--lemon-chiffon);
+  color: var(--amaranth);
+  padding: 0 0.75rem;
+  transition: all 250ms;
+}
+
+.inputGroup input:hover {
+  border-color: var(--amaranth);
+}
