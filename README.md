@@ -4,40 +4,42 @@ Proyecto desarrollado en [React](https://facebook.github.io/react/), una librer�
 
 ---
 
-### Requerimientos
+## Requerimientos
 
-- [Node.js](https://nodejs.org/es/download/)
+- [Node.js LTS](https://nodejs.org/es/download/)
+- [Yarn](https://classic.yarnpkg.com/en/docs/install)
+- [Serve](https://github.com/vercel/serve#readme) (Opcional)
 
 ---
 
-### Iniciar el ambiente de desarrollo
+## Iniciar el ambiente de desarrollo
 
-Para instalar todas las dependencias de npm, se deben ejecutar los siguientes comandos en la carpeta raíz donde se encuentre ubicado el archivo `package.json`.
+Para instalar todas las dependencias, se deben ejecutar los siguientes comandos en la carpeta raíz donde se encuentre ubicado el archivo `package.json`.
 
 ```sh
-$ npm install
-$ npm start
+$ yarn install
+$ yarn start
 ```
 
 La aplicación se iniciará en el navegador web por defecto, en la ruta `http://localhost:3000/`.
 
 ---
 
-### Construir la versión de producción
+## Iniciar el ambiente de producción
 
-Ejecutar el comando `npm run build` creará una versión optimizada de la aplicación en la carpeta `build`. Adicionalmente, para hacer pruebas en la versión de producción, se deben ejecutar los siguientes comandos para iniciar la aplicación en la ruta `http://localhost:5000`.
+Las siguientes líneas de comandos crearán una versión optimizada de la aplicación en la carpeta `build`. Luego, levantará un servidor local en la ruta `http://localhost:5000` apuntando a dicha carpeta a través de [Serve](https://github.com/vercel/serve#readme).
 
 ```sh
-$ npm install -g serve
+$ yarn build
 $ serve -s build
 ```
 
 ---
 
-### Referencias
+## Referencias
 
 - [**Bootstrap**](https://getbootstrap.com): The most popular HTML, CSS, and JS library in the world.
-- [**Firebase**](https://firebase.google.com/):Firebase helps you build and run successful apps.
+- [**Firebase**](https://firebase.google.com/): Firebase helps you build and run successful apps.
 - [**React**](https://github.com/facebook/react): A Javascript library for building user interfaces.
 - [**React Animate on Scroll**](https://github.com/dbramwell/react-animate-on-scroll): React component to animate elements on scroll.
 - [**React DOM**](https://facebook.github.io/react/docs/react-dom.html): Provides DOM-specific methods that can be used at the top level of your app and as an escape hatch to get outside of the React model if you need to.
