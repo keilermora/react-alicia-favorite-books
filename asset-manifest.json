@@ -1,24 +1,25 @@
 {
   "files": {
-    "main.css": "/alicia-s-favorite-books/static/css/main.7114fc29.chunk.css",
-    "main.js": "/alicia-s-favorite-books/static/js/main.66587cb3.chunk.js",
-    "main.js.map": "/alicia-s-favorite-books/static/js/main.66587cb3.chunk.js.map",
-    "runtime-main.js": "/alicia-s-favorite-books/static/js/runtime-main.ec023ab7.js",
-    "runtime-main.js.map": "/alicia-s-favorite-books/static/js/runtime-main.ec023ab7.js.map",
-    "static/js/2.df6cb64e.chunk.js": "/alicia-s-favorite-books/static/js/2.df6cb64e.chunk.js",
-    "static/js/2.df6cb64e.chunk.js.map": "/alicia-s-favorite-books/static/js/2.df6cb64e.chunk.js.map",
-    "static/js/3.4bf1351a.chunk.js": "/alicia-s-favorite-books/static/js/3.4bf1351a.chunk.js",
-    "static/js/3.4bf1351a.chunk.js.map": "/alicia-s-favorite-books/static/js/3.4bf1351a.chunk.js.map",
+    "main.css": "/alicia-s-favorite-books/static/css/main.66686dc7.chunk.css",
+    "main.js": "/alicia-s-favorite-books/static/js/main.717c6888.chunk.js",
+    "main.js.map": "/alicia-s-favorite-books/static/js/main.717c6888.chunk.js.map",
+    "runtime-main.js": "/alicia-s-favorite-books/static/js/runtime-main.6ce8ef3b.js",
+    "runtime-main.js.map": "/alicia-s-favorite-books/static/js/runtime-main.6ce8ef3b.js.map",
+    "static/js/2.71b56a12.chunk.js": "/alicia-s-favorite-books/static/js/2.71b56a12.chunk.js",
+    "static/js/2.71b56a12.chunk.js.map": "/alicia-s-favorite-books/static/js/2.71b56a12.chunk.js.map",
+    "static/js/3.3d5da5bc.chunk.js": "/alicia-s-favorite-books/static/js/3.3d5da5bc.chunk.js",
+    "static/js/3.3d5da5bc.chunk.js.map": "/alicia-s-favorite-books/static/js/3.3d5da5bc.chunk.js.map",
     "index.html": "/alicia-s-favorite-books/index.html",
-    "static/css/main.7114fc29.chunk.css.map": "/alicia-s-favorite-books/static/css/main.7114fc29.chunk.css.map",
-    "static/js/2.df6cb64e.chunk.js.LICENSE.txt": "/alicia-s-favorite-books/static/js/2.df6cb64e.chunk.js.LICENSE.txt",
+    "static/css/main.66686dc7.chunk.css.map": "/alicia-s-favorite-books/static/css/main.66686dc7.chunk.css.map",
+    "static/js/2.71b56a12.chunk.js.LICENSE.txt": "/alicia-s-favorite-books/static/js/2.71b56a12.chunk.js.LICENSE.txt",
     "static/media/panda.3db20865.svg": "/alicia-s-favorite-books/static/media/panda.3db20865.svg",
-    "static/media/About.module.scss": "/alicia-s-favorite-books/static/media/sakura.06260d49.png"
+    "static/media/About.module.css": "/alicia-s-favorite-books/static/media/sakura-alpha-transparency.9f0e22fd.png",
+    "static/media/Home.module.css": "/alicia-s-favorite-books/static/media/sakura.2e41482c.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.ec023ab7.js",
-    "static/js/2.df6cb64e.chunk.js",
-    "static/css/main.7114fc29.chunk.css",
-    "static/js/main.66587cb3.chunk.js"
+    "static/js/runtime-main.6ce8ef3b.js",
+    "static/js/2.71b56a12.chunk.js",
+    "static/css/main.66686dc7.chunk.css",
+    "static/js/main.717c6888.chunk.js"
   ]
 }
