@@ -8,7 +8,7 @@
     "firebase": "^9.0.1",
     "husky": "^5.2.0",
     "lint-staged": "^10.5.4",
-    "node-sass": "^6.0.1",
+    "node-sass": "^7.0.0",
     "prettier": "^2.2.1",
     "react": "^17.0.2",
     "react-animate-on-scroll": "^2.1.5",
