@@ -1,43 +1,37 @@
-import { FC, ReactElement } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import store from './redux/store';
-
-import ScrollToTop from './commons/ScrollToTop/ScrollToTop';
-import Navbar from './commons/Navbar/Navbar';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import BookDetails from './pages/BookDetails/BookDetails';
 import NotFound from './pages/NotFound/NotFound';
-import ParticlesBackground from './commons/ParticlesBackground/ParticlesBackground';
-import Footer from './commons/Footer/Footer';
+import ParticlesBackground from './components/ParticlesBackground/ParticlesBackground';
+import Footer from './components/Footer/Footer';
+import { FilterStateProvider } from './contexts/FilterState/FilterStateProvider';
+import { FirebaseDataStateProvider } from './contexts/FirebaseDataState/FirebaseDataProvider';
 
-const App: FC = (): ReactElement => {
+const App = () => {
   return (
-    <Provider store={store}>
-      <ParticlesBackground>
-        <Router basename="/alicia-s-favorite-books">
-          <ScrollToTop>
-            <Navbar />
-            <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route path="/about">
-                <About />
-              </Route>
-              <Route path="/book/:id">
-                <BookDetails />
-              </Route>
-              <Route path="*">
-                <NotFound />
-              </Route>
-            </Switch>
-            <Footer />
-          </ScrollToTop>
-        </Router>
-      </ParticlesBackground>
-    </Provider>
+    <FilterStateProvider>
+      <FirebaseDataStateProvider>
+        <ParticlesBackground>
+          <Router basename="/alicia-s-favorite-books">
+            <ScrollToTop>
+              <>
+                <Navbar />
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/book/:id" element={<BookDetails />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+                <Footer />
+              </>
+            </ScrollToTop>
+          </Router>
+        </ParticlesBackground>
+      </FirebaseDataStateProvider>
+    </FilterStateProvider>
   );
 };
 

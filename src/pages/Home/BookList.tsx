@@ -1,23 +1,15 @@
-import { FC, ReactElement } from 'react';
-import { useSelector } from 'react-redux';
-import AppState from '../../interfaces/AppState';
-import Book from '../../interfaces/Book';
 import BookListItem from './BookListItem';
-
+import { useFirebaseDataState } from '../../contexts/FirebaseDataState';
+import { useFilterState } from '../../contexts/FilterState';
+import { Book } from '../../models/Book';
 import styles from './BookList.module.css';
 
-const BookList: FC = (): ReactElement => {
-  const books: Book[] = useSelector((state: AppState) => state.books);
-  const selectedAuthor: string = useSelector(
-    (state: AppState) => state.selectedAuthor
-  );
-  const selectedGenre: string = useSelector(
-    (state: AppState) => state.selectedGenre
-  );
-  const selectedSaga: string = useSelector(
-    (state: AppState) => state.selectedSaga
-  );
-  const filterText: string = useSelector((state: AppState) => state.filterText);
+const BookList = () => {
+  const { firebaseDataState } = useFirebaseDataState();
+  const { filterState } = useFilterState();
+
+  const { books } = firebaseDataState;
+  const { filterText, selectedAuthor, selectedGenre, selectedSaga } = filterState;
 
   /**
    * Filtra los libros, según los parámetros del filtro
@@ -29,23 +21,17 @@ const BookList: FC = (): ReactElement => {
 
     // Filtrar si hay algún autor seleccionado
     if (selectedAuthor !== '') {
-      filteredBooks = filteredBooks.filter((book: Book) =>
-        book.author.includes(selectedAuthor)
-      );
+      filteredBooks = filteredBooks.filter((book: Book) => book.author.includes(selectedAuthor));
     }
 
     // Filtrar si hay algún género seleccionado
     if (selectedGenre !== '') {
-      filteredBooks = filteredBooks.filter((book: Book) =>
-        book.genre.includes(selectedGenre)
-      );
+      filteredBooks = filteredBooks.filter((book: Book) => book.genre.includes(selectedGenre));
     }
 
     // Filtrar si hay alguna saga seleccionada
     if (selectedSaga !== '') {
-      filteredBooks = filteredBooks.filter((book: Book) =>
-        book.saga.includes(selectedSaga)
-      );
+      filteredBooks = filteredBooks.filter((book: Book) => book.saga.includes(selectedSaga));
     }
 
     // Filtrar si el texto del filtro no se encuentre vacío.

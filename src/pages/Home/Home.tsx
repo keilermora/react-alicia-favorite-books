@@ -1,6 +1,4 @@
-import { Dispatch, FC, ReactElement, useEffect } from 'react';
-import { useSelector, useStore } from 'react-redux';
-import { AnyAction, Store } from 'redux';
+import { Dispatch, useEffect } from 'react';
 import {
   collection,
   DocumentData,
@@ -8,35 +6,35 @@ import {
   QueryDocumentSnapshot,
   QuerySnapshot,
 } from 'firebase/firestore';
+import { Book } from '../../models/Book';
 import db from '../../firebase';
-import { SET_FIREBASE_DATA } from '../../redux/actions';
-import Book from '../../interfaces/Book';
-import AppState from '../../interfaces/AppState';
-import BookList from './BookList';
+import { FirebaseDataActions, FirebaseDataActionType } from '../../stores/firebaseData';
+import { useFirebaseDataState } from '../../contexts/FirebaseDataState';
+import Container from '../../components/Container/Container';
 import Filter from './Filter';
-import Container from '../../commons/Container/Container';
+import BookList from './BookList';
+
 import { ReactComponent as Panda } from '../../assets/images/panda.svg';
 import styles from './Home.module.css';
 
-const fetchBooks: any = async (dispatch: Dispatch<AnyAction>) => {
+const fetchBooks: any = async (dispatch: Dispatch<FirebaseDataActionType>) => {
+  console.log('hola');
   let books: Book[] = [];
   let authors: string[] = [];
   let genres: string[] = [];
   let sagas: string[] = [];
 
-  const querySnapshot: QuerySnapshot<DocumentData> = await getDocs(
-    collection(db, 'books')
-  );
+  const querySnapshot: QuerySnapshot<DocumentData> = await getDocs(collection(db, 'books'));
   querySnapshot.forEach((doc: QueryDocumentSnapshot<DocumentData>) => {
     books.push({ id: doc.id, ...doc.data() } as Book);
   });
 
-  authors = [...new Set(books.map((book) => book.author))].sort();
-  genres = [...new Set(books.map((book) => book.genre))].sort();
-  sagas = [...new Set(books.map((book) => book.saga))].sort();
+  authors = books.map((book) => book.author).sort();
+  genres = books.map((book) => book.genre).sort();
+  sagas = books.map((book) => book.saga).sort();
 
   dispatch({
-    type: SET_FIREBASE_DATA,
+    type: FirebaseDataActions.SET_FIREBASE_DATA,
     payload: {
       books,
       authors,
@@ -46,15 +44,17 @@ const fetchBooks: any = async (dispatch: Dispatch<AnyAction>) => {
   });
 };
 
-const Home: FC = (): ReactElement => {
-  const store: Store<any, AnyAction> = useStore();
-  const books: Book[] = useSelector((state: AppState): Book[] => state.books);
+const Home = () => {
+  const { firebaseDataState, dispatchFirebaseData } = useFirebaseDataState();
+  const { books } = firebaseDataState;
+
+  console.log('adios');
 
   useEffect(() => {
     if (books && !books.length) {
-      store.dispatch(fetchBooks);
+      fetchBooks(dispatchFirebaseData);
     }
-  }, [books, store]);
+  }, [books, dispatchFirebaseData]);
 
   return (
     <main className={styles.home}>

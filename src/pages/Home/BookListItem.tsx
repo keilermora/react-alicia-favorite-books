@@ -1,6 +1,6 @@
-import { FC, memo, ReactElement } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import Book from '../../interfaces/Book';
+import { Book } from '../../models/Book';
 
 import styles from './BookListItem.module.css';
 
@@ -8,17 +8,11 @@ interface BookListItemProps {
   book: Book;
 }
 
-const BookListItem: FC<BookListItemProps> = memo(({ book }): ReactElement => {
+const BookListItem = React.memo(({ book }: BookListItemProps) => {
   return (
     <div className={styles.bookListItem}>
       <Link to={`/book/${book.id}`}>
-        <img
-          src={book.imageUrl}
-          alt={book.title}
-          width={226}
-          height={350}
-          loading="lazy"
-        />
+        <img src={book.imageUrl} alt={book.title} width={226} height={350} loading="lazy" />
       </Link>
     </div>
   );

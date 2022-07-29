@@ -1,9 +1,0 @@
-.anchor {
-  transition: all 200ms;
-  text-decoration: none;
-}
-
-.anchor:hover {
-  text-decoration: none;
-  color: var(--amaranth);
-}

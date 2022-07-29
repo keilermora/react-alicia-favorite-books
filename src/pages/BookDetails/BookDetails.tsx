@@ -1,36 +1,35 @@
 import { FC, ReactElement, useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
-import { useHistory } from 'react-router-dom';
-import {
-  doc,
-  DocumentData,
-  DocumentSnapshot,
-  getDoc,
-} from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
+import { doc, DocumentData, DocumentSnapshot, getDoc } from 'firebase/firestore';
 import db from '../../firebase';
-import AppState from '../../interfaces/AppState';
-import Book from '../../interfaces/Book';
-import Button from '../../commons/Button/Button';
-import Container from '../../commons/Container/Container';
+
+import Button from '../../components/Button/Button';
+import Container from '../../components/Container/Container';
 
 import styles from './BookDetails.module.css';
+import { Book } from '../../models/Book';
+import { useFirebaseDataState } from '../../contexts/FirebaseDataState';
 
 const BookDetails: FC = (): ReactElement => {
   let { id }: any = useParams();
-  const books: Book[] = useSelector((state: AppState) => state.books);
+  const { firebaseDataState } = useFirebaseDataState();
+  const { books } = firebaseDataState;
+
   const [bookData, setBookData] = useState<Book>();
   const [notFound, setNotFound] = useState(false);
-  const history = useHistory();
+  const navigate = useNavigate();
+
+  const goBack = () => {
+    navigate(-1);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
       if (books && books.length) {
         setBookData(books.find((book: Book) => book.id === id));
       } else {
-        const querySnapshot: DocumentSnapshot<DocumentData> = await getDoc(
-          doc(db, 'books', id)
-        );
+        const querySnapshot: DocumentSnapshot<DocumentData> = await getDoc(doc(db, 'books', id));
         const bookData = querySnapshot.data();
 
         if (bookData) {
@@ -50,8 +49,8 @@ const BookDetails: FC = (): ReactElement => {
         <Container>
           <div className={styles.bookContent}>
             <p>
-              El libro seleccionado no se encuentra dentro de la lista de
-              favoritos. Tal vez Alicia cambió de opinión... ¯\_(ツ)_/¯
+              El libro seleccionado no se encuentra dentro de la lista de favoritos. Tal vez Alicia
+              cambió de opinión... ¯\_(ツ)_/¯
             </p>
           </div>
         </Container>
@@ -76,13 +75,13 @@ const BookDetails: FC = (): ReactElement => {
 
   const summary = bookData.summary
     .split('\\n')
-    .map((str, index) => <p key={index}>{str}</p>);
+    .map((str: string, index: number) => <p key={index}>{str}</p>);
 
   return (
     <main className={styles.bookDetails}>
       <Container>
         <div className={styles.bookContent}>
-          <Button onClick={history.goBack}>Volver</Button>
+          <Button onClick={goBack}>Volver</Button>
           <img src={bookData.imageUrl} alt={bookData.title} width={350} />
           <div className={styles.info}>
             <h1>{bookData.title}</h1>
@@ -90,11 +89,9 @@ const BookDetails: FC = (): ReactElement => {
               <span className={styles.label}>Fecha publicación:</span>{' '}
               <span>{publishedAtDate.toLocaleDateString()}</span>
               <br />
-              <span className={styles.label}>Saga:</span>{' '}
-              <span>{bookData.saga}</span>
+              <span className={styles.label}>Saga:</span> <span>{bookData.saga}</span>
               <br />
-              <span className={styles.label}>Género:</span>{' '}
-              <span>{bookData.genre}</span>
+              <span className={styles.label}>Género:</span> <span>{bookData.genre}</span>
             </div>
             {summary}
           </div>

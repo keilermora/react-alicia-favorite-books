@@ -1,12 +1,11 @@
-import { FC, ReactElement } from 'react';
 import ScrollAnimation from 'react-animate-on-scroll';
-import Anchor from '../../commons/Anchor/Anchor';
-import Button from '../../commons/Button/Button';
-import Container from '../../commons/Container/Container';
+import Anchor from '../../components/Anchor/Anchor';
+import Button from '../../components/Button/Button';
+import Container from '../../components/Container/Container';
 
 import styles from './About.module.css';
 
-const About: FC = (): ReactElement => {
+const About = () => {
   return (
     <main className={styles.about}>
       <Container>
@@ -14,20 +13,14 @@ const About: FC = (): ReactElement => {
           <h1>Alicia&#39;s Favorite Books</h1>
           <p>
             Aplicación web elaborada por{' '}
-            <Anchor href="https://www.linkedin.com/in/keilermora/">
-              Keiler Mora
-            </Anchor>{' '}
-            con fines demostrativos. El proyecto fue desarrollado usando las
-            librerías de JavaScript{' '}
+            <Anchor href="https://www.linkedin.com/in/keilermora/">Keiler Mora</Anchor> con fines
+            demostrativos. El proyecto fue desarrollado usando las librerías de JavaScript{' '}
             <Anchor href="https://reactjs.org/">React</Anchor> (¡Hooks!) y{' '}
-            <Anchor href="https://redux.js.org/.org/">Redux</Anchor> para crear
-            la interfaz de usuario, en comunicación con data alojada en{' '}
-            <Anchor href="https://firebase.google.com/">Firebase</Anchor>. El
-            código fuente está disponible en{' '}
-            <Anchor href="https://github.com/keilermora/alicias-favorite-books">
-              Github
-            </Anchor>
-            .
+            <Anchor href="https://redux.js.org/.org/">Redux</Anchor> para crear la interfaz de
+            usuario, en comunicación con data alojada en{' '}
+            <Anchor href="https://firebase.google.com/">Firebase</Anchor>. El código fuente está
+            disponible en{' '}
+            <Anchor href="https://github.com/keilermora/alicias-favorite-books">Github</Anchor>.
           </p>
           <Button href="/">Volver</Button>
         </div>

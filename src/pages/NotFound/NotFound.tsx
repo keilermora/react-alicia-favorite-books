@@ -1,6 +1,6 @@
 import { FC, ReactElement } from 'react';
-import Button from '../../commons/Button/Button';
-import Container from '../../commons/Container/Container';
+import Button from '../../components/Button/Button';
+import Container from '../../components/Container/Container';
 
 import styles from './NotFound.module.css';
 

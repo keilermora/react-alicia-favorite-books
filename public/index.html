@@ -3,10 +3,7 @@
   <head>
     <!-- ensure proper document rendering -->
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <!-- essential -->
     <title>Los libros favoritos de Alicia | React</title>
@@ -37,18 +34,18 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/panda.png" />
     <link rel="mask-icon" href="%PUBLIC_URL%/favicon.ico" color="#f0f8ff" />
     <!-- facebook open graph -->
-    <meta property="og:url" content="https://keilermora.github.io/alicia-s-favorite-books/">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg">
-    <meta property="og:description" content="Para ella &hearts; Desarrollado por Keiler Mora, usando las librerías de JavaScript React y Redux para crear la interfaz de usuario.">
-    <meta property="og:locale" content="es_VE">
+    <meta property="og:url" content="https://keilermora.github.io/alicia-s-favorite-books/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg" />
+    <meta
+      property="og:description"
+      content="Para ella &hearts; Desarrollado por Keiler Mora, usando las librerías de JavaScript React y Redux para crear la interfaz de usuario."
+    />
+    <meta property="og:locale" content="es_VE" />
     <!-- twitter card -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:creator" content="@keilermora" />
-    <meta
-      name="twitter:url"
-      content="https://keilermora.github.io/alicia-s-favorite-books/"
-    />
+    <meta name="twitter:url" content="https://keilermora.github.io/alicia-s-favorite-books/" />
     <meta name="twitter:title" content="Los libros favoritos de Alicia" />
     <meta
       name="twitter:description"
@@ -61,10 +58,7 @@
     <meta name="pinterest" content="nopin" />
     <!-- Apple iOS -->
     <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/panda.png" />
-    <meta
-      name="apple-mobile-web-app-title"
-      content="Los libros favoritos de Alicia"
-    />
+    <meta name="apple-mobile-web-app-title" content="Los libros favoritos de Alicia" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="mobile-web-app-capable" content="yes" />
@@ -84,28 +78,22 @@
       // the correct url will be waiting in the browser's history for
       // the single page app to route accordingly.
       (function (l) {
-        if (l.search[1] === "/") {
+        if (l.search[1] === '/') {
           var decoded = l.search
             .slice(1)
-            .split("&")
+            .split('&')
             .map(function (s) {
-              return s.replace(/~and~/g, "&");
+              return s.replace(/~and~/g, '&');
             })
-            .join("?");
-          window.history.replaceState(
-            null,
-            null,
-            l.pathname.slice(0, -1) + decoded + l.hash
-          );
+            .join('?');
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
         }
       })(window.location);
     </script>
     <!-- End Single Page Apps for GitHub Pages -->
   </head>
   <body>
-    <noscript
-      >Debes habilitar JavaScript para poder visualizar la aplicación.</noscript
-    >
+    <noscript>Debes habilitar JavaScript para poder visualizar la aplicación.</noscript>
     <div id="root"></div>
   </body>
 </html>
