@@ -6,15 +6,15 @@ import {
   QueryDocumentSnapshot,
   QuerySnapshot,
 } from 'firebase/firestore';
-import { Book } from '../../models/Book';
+import { Book } from 'models/Book';
 import { db } from '../../firebase';
-import { FirebaseDataActions, FirebaseDataActionType } from '../../stores/firebaseData';
-import { useFirebaseDataState } from '../../contexts/FirebaseDataState';
-import Container from '../../components/Container/Container';
+import { FirebaseDataActions, FirebaseDataActionType } from 'stores/firebaseData';
+import { useFirebaseDataState } from 'contexts/FirebaseDataState';
+import Container from 'components/Container/Container';
 import Filter from './Filter';
 import BookList from './BookList';
 
-import { ReactComponent as Panda } from '../../assets/images/panda.svg';
+import { ReactComponent as Panda } from 'assets/images/panda.svg';
 import styles from './Home.module.css';
 
 const fetchBooks = async (dispatch: Dispatch<FirebaseDataActionType>) => {

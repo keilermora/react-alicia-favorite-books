@@ -1,5 +1,5 @@
 import React from 'react';
-import { FilterActionType, filterInitialState } from '../../stores/filter';
+import { FilterActionType, filterInitialState } from 'stores/filter';
 
 interface FilterStateCtxInterface {
   filterState: typeof filterInitialState;

@@ -1,5 +1,5 @@
 import { FirebaseDataActionType, FirebaseDataActions } from './firebaseDataActions';
-import { firebaseDataInitialState } from './firebaseDataState';
+import { firebaseDataInitialState } from '.';
 
 export const firebaseDataReducer = (
   state: typeof firebaseDataInitialState,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FirebaseDataActionType, firebaseDataInitialState } from '../../stores/firebaseData';
+import { FirebaseDataActionType, firebaseDataInitialState } from 'stores/firebaseData';
 
 interface FirebaseDataStateCtxInterface {
   firebaseDataState: typeof firebaseDataInitialState;

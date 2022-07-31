@@ -1,4 +1,4 @@
-import { Book } from '../../models/Book';
+import { Book } from 'models/Book';
 
 export const firebaseDataInitialState = {
   books: [] as Book[],

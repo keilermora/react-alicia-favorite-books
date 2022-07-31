@@ -1,6 +1,6 @@
 import { useReducer } from 'react';
-import { filterInitialState, filterReducer } from '../../stores/filter';
-import { FilterStateCtx } from './FilterStateCtx';
+import { filterInitialState, filterReducer } from 'stores/filter';
+import { FilterStateCtx } from '.';
 
 interface FilterStateProviderProps {
   children: React.ReactNode;

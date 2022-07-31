@@ -1,8 +1,8 @@
 import { ChangeEvent, ReactElement } from 'react';
 
-import { FilterActions } from '../../stores/filter';
-import { useFilterState } from '../../contexts/FilterState';
-import { useFirebaseDataState } from '../../contexts/FirebaseDataState';
+import { FilterActions } from 'stores/filter';
+import { useFilterState } from 'contexts/FilterState';
+import { useFirebaseDataState } from 'contexts/FirebaseDataState';
 
 import styles from './Filter.module.css';
 

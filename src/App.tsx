@@ -1,14 +1,16 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import About from './pages/About/About';
-import BookDetails from './pages/BookDetails/BookDetails';
-import Home from './pages/Home/Home';
-import NotFound from './pages/NotFound/NotFound';
-import { FilterStateProvider } from './contexts/FilterState/FilterStateProvider';
-import { FirebaseDataStateProvider } from './contexts/FirebaseDataState/FirebaseDataProvider';
-import { Footer } from './components/Footer';
-import { Navbar } from './components/Navbar';
-import { ParticlesBackground } from './components/ParticlesBackground';
-import { ScrollToTop } from './components/ScrollToTop';
+import { FilterStateProvider } from 'contexts/FilterState/FilterStateProvider';
+import { FirebaseDataStateProvider } from 'contexts/FirebaseDataState/FirebaseDataProvider';
+import { Navbar } from 'components/Navbar';
+import { Footer } from 'components/Footer';
+import { ParticlesBackground } from 'components/ParticlesBackground';
+import { ScrollToTop } from 'components/ScrollToTop';
+
+const Home = lazy(() => import('pages/Home'));
+const About = lazy(() => import('pages/About'));
+const BookDetails = lazy(() => import('pages/BookDetails'));
+const NotFound = lazy(() => import('pages/NotFound'));
 
 const App = () => {
   return (
@@ -17,16 +19,16 @@ const App = () => {
         <ParticlesBackground>
           <Router basename="/alicia-s-favorite-books">
             <ScrollToTop>
-              <>
-                <Navbar />
+              <Navbar />
+              <Suspense>
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/about" element={<About />} />
                   <Route path="/book/:id" element={<BookDetails />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
-                <Footer />
-              </>
+              </Suspense>
+              <Footer />
             </ScrollToTop>
           </Router>
         </ParticlesBackground>

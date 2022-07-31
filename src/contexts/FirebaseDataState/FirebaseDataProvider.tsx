@@ -1,6 +1,6 @@
 import { useReducer } from 'react';
-import { firebaseDataInitialState, firebaseDataReducer } from '../../stores/firebaseData';
-import { FirebaseDataStateCtx } from './FirebaseDataCtx';
+import { firebaseDataInitialState, firebaseDataReducer } from 'stores/firebaseData';
+import { FirebaseDataStateCtx } from '.';
 
 interface FirebaseDataStateProviderProps {
   children: React.ReactNode;

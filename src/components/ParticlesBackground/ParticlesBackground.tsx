@@ -1,7 +1,9 @@
 import React from 'react';
 import Particles from 'react-tsparticles';
+
+import particles from 'assets/particles.json';
+
 import styles from './ParticlesBackground.module.css';
-import particles from '../../assets/particles.json';
 
 interface ParticlesBackgroundProps {
   children: React.ReactNode;

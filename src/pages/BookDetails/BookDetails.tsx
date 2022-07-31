@@ -3,13 +3,13 @@ import { useParams } from 'react-router';
 import { useNavigate } from 'react-router-dom';
 import { doc, DocumentData, DocumentSnapshot, getDoc } from 'firebase/firestore';
 
-import { Button } from '../../components/Button';
-import { Container } from '../../components/Container';
-import { Book } from '../../models/Book';
-import { useFirebaseDataState } from '../../contexts/FirebaseDataState';
-import { db } from '../../firebase';
+import { Button } from 'components/Button';
+import { Container } from 'components/Container';
+import { Book } from 'models/Book';
+import { useFirebaseDataState } from 'contexts/FirebaseDataState';
 
 import styles from './BookDetails.module.css';
+import { db } from '../../firebase';
 
 const BookDetails = (): JSX.Element => {
   let { id }: any = useParams();
@@ -26,17 +26,17 @@ const BookDetails = (): JSX.Element => {
 
   useEffect(() => {
     const fetchData = async () => {
-      let bookData;
+      let bookDataFound;
 
       if (books && books.length) {
-        bookData = books.find((book: Book) => book.id === id);
+        bookDataFound = books.find((book: Book) => book.id === id);
       } else {
         const querySnapshot: DocumentSnapshot<DocumentData> = await getDoc(doc(db, 'books', id));
-        bookData = querySnapshot.data();
+        bookDataFound = querySnapshot.data();
       }
 
-      if (bookData) {
-        setBookData(bookData as Book);
+      if (bookDataFound) {
+        setBookData(bookDataFound as Book);
       } else {
         setNotFound(true);
       }
@@ -60,7 +60,7 @@ const BookDetails = (): JSX.Element => {
     );
   }
 
-  if (!bookData) {
+  if (!bookData.summary) {
     return (
       <main className={styles.bookDetails}>
         <Container>

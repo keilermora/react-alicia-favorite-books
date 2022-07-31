@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Book } from '../../models/Book';
+import { Book } from 'models/Book';
 
 import styles from './BookListItem.module.css';
 

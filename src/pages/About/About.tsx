@@ -1,8 +1,8 @@
 import ScrollAnimation from 'react-animate-on-scroll';
 
-import { Anchor } from '../../components/Anchor';
-import { Button } from '../../components/Button';
-import { Container } from '../../components/Container';
+import { Anchor } from 'components/Anchor';
+import { Button } from 'components/Button';
+import { Container } from 'components/Container';
 
 import styles from './About.module.css';
 

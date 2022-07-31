@@ -1,5 +1,5 @@
-import { FilterActions, FilterActionType } from './filterActions';
-import { filterInitialState } from './filterState';
+import { FilterActions, FilterActionType } from '.';
+import { filterInitialState } from '.';
 
 export const filterReducer = (state: typeof filterInitialState, action: FilterActionType) => {
   switch (action.type) {
