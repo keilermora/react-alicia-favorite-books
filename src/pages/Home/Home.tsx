@@ -7,7 +7,7 @@ import {
   QuerySnapshot,
 } from 'firebase/firestore';
 import { Book } from 'models/Book';
-import { db } from '../../firebase';
+import { db } from '../../configs/firebase';
 import { FirebaseDataActions, FirebaseDataActionType } from 'stores/firebaseData';
 import { useFirebaseDataState } from 'contexts/FirebaseDataState';
 import Container from 'components/Container/Container';

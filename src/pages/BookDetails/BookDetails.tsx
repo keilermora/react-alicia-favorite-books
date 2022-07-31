@@ -9,7 +9,7 @@ import { Book } from 'models/Book';
 import { useFirebaseDataState } from 'contexts/FirebaseDataState';
 
 import styles from './BookDetails.module.css';
-import { db } from '../../firebase';
+import { db } from '../../configs/firebase';
 
 const BookDetails = (): JSX.Element => {
   let { id }: any = useParams();
