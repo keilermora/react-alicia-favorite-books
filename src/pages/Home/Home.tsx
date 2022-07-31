@@ -16,21 +16,19 @@ import BookList from './BookList';
 
 import { ReactComponent as Panda } from 'assets/images/panda.svg';
 import styles from './Home.module.css';
+import { removeDuplicates } from 'shared/utils/removeDuplicates';
 
 const fetchBooks = async (dispatch: Dispatch<FirebaseDataActionType>) => {
   let books: Book[] = [];
-  let authors: string[] = [];
-  let genres: string[] = [];
-  let sagas: string[] = [];
 
   const querySnapshot: QuerySnapshot<DocumentData> = await getDocs(collection(db, 'books'));
   querySnapshot.forEach((doc: QueryDocumentSnapshot<DocumentData>) => {
     books.push({ id: doc.id, ...doc.data() } as Book);
   });
 
-  authors = books.map((book) => book.author).sort();
-  genres = books.map((book) => book.genre).sort();
-  sagas = books.map((book) => book.saga).sort();
+  const authors = removeDuplicates(books.map(({ author }) => author));
+  const genres = removeDuplicates(books.map(({ genre }) => genre));
+  const sagas = removeDuplicates(books.map(({ saga }) => saga));
 
   dispatch({
     type: FirebaseDataActions.SET_FIREBASE_DATA,
