@@ -1,5 +1,8 @@
 # [Libros favoritos de Alicia](https://keilermora.github.io/alicia-s-favorite-books)
 
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
 Proyecto desarrollado en [React](https://facebook.github.io/react/), una librería de Javascript para construir interfaces de usuario.
 
 ## Requerimientos
