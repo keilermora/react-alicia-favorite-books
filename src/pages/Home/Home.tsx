@@ -7,7 +7,7 @@ import {
   QuerySnapshot,
 } from 'firebase/firestore';
 import { Book } from '../../models/Book';
-import db from '../../firebase';
+import { db } from '../../firebase';
 import { FirebaseDataActions, FirebaseDataActionType } from '../../stores/firebaseData';
 import { useFirebaseDataState } from '../../contexts/FirebaseDataState';
 import Container from '../../components/Container/Container';
@@ -17,8 +17,7 @@ import BookList from './BookList';
 import { ReactComponent as Panda } from '../../assets/images/panda.svg';
 import styles from './Home.module.css';
 
-const fetchBooks: any = async (dispatch: Dispatch<FirebaseDataActionType>) => {
-  console.log('hola');
+const fetchBooks = async (dispatch: Dispatch<FirebaseDataActionType>) => {
   let books: Book[] = [];
   let authors: string[] = [];
   let genres: string[] = [];
@@ -47,8 +46,6 @@ const fetchBooks: any = async (dispatch: Dispatch<FirebaseDataActionType>) => {
 const Home = () => {
   const { firebaseDataState, dispatchFirebaseData } = useFirebaseDataState();
   const { books } = firebaseDataState;
-
-  console.log('adios');
 
   useEffect(() => {
     if (books && !books.length) {

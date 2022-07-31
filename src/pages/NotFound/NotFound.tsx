@@ -1,10 +1,9 @@
-import { FC, ReactElement } from 'react';
-import Button from '../../components/Button/Button';
-import Container from '../../components/Container/Container';
+import { Button } from '../../components/Button';
+import { Container } from '../../components/Container';
 
 import styles from './NotFound.module.css';
 
-const NotFound: FC = (): ReactElement => {
+const NotFound = (): JSX.Element => {
   return (
     <div className={styles.notFound}>
       <Container>

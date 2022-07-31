@@ -1,10 +1,12 @@
-import { ChangeEvent, FC, ReactElement } from 'react';
+import { ChangeEvent, ReactElement } from 'react';
+
+import { FilterActions } from '../../stores/filter';
 import { useFilterState } from '../../contexts/FilterState';
 import { useFirebaseDataState } from '../../contexts/FirebaseDataState';
-import { FilterActions } from '../../stores/filter';
+
 import styles from './Filter.module.css';
 
-const Filter: FC = (): ReactElement => {
+const Filter = (): JSX.Element => {
   const { filterState, dispatchFilterState } = useFilterState();
   const { firebaseDataState } = useFirebaseDataState();
 
@@ -31,7 +33,7 @@ const Filter: FC = (): ReactElement => {
     dispatchFilterState({ type: FilterActions.SET_FILTER_SAGA, payload: e.target.value });
   };
 
-  if (authors && authors.length) {
+  if (authors?.length) {
     authorOptions = authors.map((author: string, index: number) => (
       <option key={index} value={author}>
         {author}
@@ -39,7 +41,7 @@ const Filter: FC = (): ReactElement => {
     ));
   }
 
-  if (genres && genres.length) {
+  if (genres?.length) {
     genreOptions = genres.map((genre: string, index: number) => (
       <option key={index} value={genre}>
         {genre}
@@ -47,7 +49,7 @@ const Filter: FC = (): ReactElement => {
     ));
   }
 
-  if (sagas && sagas.length) {
+  if (sagas?.length) {
     sagaOptions = sagas.map((saga: string, index: number) => (
       <option key={index} value={saga}>
         {saga}
@@ -59,28 +61,28 @@ const Filter: FC = (): ReactElement => {
     <form className={styles.filter}>
       <div className={styles.inputGroup}>
         <label htmlFor="selectedAuthor">Autor</label>
-        <select id="selectedAuthor" onChange={(e) => selectAuthor(e)} value={selectedAuthor}>
+        <select id="selectedAuthor" onChange={selectAuthor} value={selectedAuthor}>
           <option value="">Todos</option>
           {authorOptions}
         </select>
       </div>
       <div className={styles.inputGroup}>
         <label htmlFor="selectedGenre">Género</label>
-        <select id="selectedGenre" onChange={(e) => selectGenre(e)} value={selectedGenre}>
+        <select id="selectedGenre" onChange={selectGenre} value={selectedGenre}>
           <option value="">Todos</option>
           {genreOptions}
         </select>
       </div>
       <div className={styles.inputGroup}>
         <label htmlFor="selectedSaga">Saga</label>
-        <select id="selectedSaga" onChange={(e) => selectSaga(e)} value={selectedSaga}>
+        <select id="selectedSaga" onChange={selectSaga} value={selectedSaga}>
           <option value="">Todas</option>
           {sagaOptions}
         </select>
       </div>
       <div className={styles.inputGroup}>
         <label htmlFor="filterText">Título</label>
-        <input id="filterText" type="text" value={filterText} onChange={(e) => setFilterText(e)} />
+        <input id="filterText" type="text" value={filterText} onChange={setFilterText} />
       </div>
     </form>
   );

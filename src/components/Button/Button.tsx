@@ -1,14 +1,16 @@
+import { MouseEventHandler, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
+
 import styles from './Button.module.css';
 
 interface ButtonProps {
-  children: string;
+  children: ReactNode;
   className?: string;
   href?: string;
-  onClick?: any;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
-const Button = ({ children, className, href, onClick }: ButtonProps) => {
+const Button = ({ children, className, href, onClick }: ButtonProps): JSX.Element => {
   const classNames = [styles.button, className].join(' ');
 
   return href ? (

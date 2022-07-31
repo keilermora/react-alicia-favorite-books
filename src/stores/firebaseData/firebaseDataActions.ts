@@ -1,4 +1,4 @@
-import { FirebaseDataState } from './firebaseDataState';
+import { firebaseDataInitialState } from './firebaseDataState';
 
 export enum FirebaseDataActions {
   SET_FIREBASE_DATA = 'SET_FIREBASE_DATA',
@@ -6,5 +6,5 @@ export enum FirebaseDataActions {
 
 export type FirebaseDataActionType = {
   type: typeof FirebaseDataActions.SET_FIREBASE_DATA;
-  payload: FirebaseDataState;
+  payload: typeof firebaseDataInitialState;
 };

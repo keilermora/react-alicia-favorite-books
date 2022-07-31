@@ -7,7 +7,7 @@ interface ParticlesBackgroundProps {
   children: React.ReactNode;
 }
 
-const ParticlesBackground = ({ children }: ParticlesBackgroundProps) => {
+const ParticlesBackground = ({ children }: ParticlesBackgroundProps): JSX.Element => {
   const particlesOptions = particles;
   return (
     <>

@@ -1,10 +1,10 @@
-import { FC, ReactElement } from 'react';
 import { Link } from 'react-router-dom';
+
 import Container from '../Container/Container';
 
 import styles from './Navbar.module.css';
 
-const Navbar: FC = (): ReactElement => {
+const Navbar = (): JSX.Element => {
   return (
     <nav className={styles.navbar}>
       <Container>

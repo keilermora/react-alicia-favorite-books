@@ -1,7 +1,9 @@
 import React from 'react';
-import { FirebaseDataActionType, FirebaseDataState } from '../../stores/firebaseData';
+import { FirebaseDataActionType, firebaseDataInitialState } from '../../stores/firebaseData';
 
-export const FirebaseDataStateCtx = React.createContext<{
-  firebaseDataState: FirebaseDataState;
+interface FirebaseDataStateCtxInterface {
+  firebaseDataState: typeof firebaseDataInitialState;
   dispatchFirebaseData: React.Dispatch<FirebaseDataActionType>;
-} | null>(null);
+}
+
+export const FirebaseDataStateCtx = React.createContext<FirebaseDataStateCtxInterface | null>(null);

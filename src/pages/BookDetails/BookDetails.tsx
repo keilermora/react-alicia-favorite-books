@@ -1,22 +1,22 @@
-import { FC, ReactElement, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { useNavigate } from 'react-router-dom';
 import { doc, DocumentData, DocumentSnapshot, getDoc } from 'firebase/firestore';
-import db from '../../firebase';
 
-import Button from '../../components/Button/Button';
-import Container from '../../components/Container/Container';
-
-import styles from './BookDetails.module.css';
+import { Button } from '../../components/Button';
+import { Container } from '../../components/Container';
 import { Book } from '../../models/Book';
 import { useFirebaseDataState } from '../../contexts/FirebaseDataState';
+import { db } from '../../firebase';
 
-const BookDetails: FC = (): ReactElement => {
+import styles from './BookDetails.module.css';
+
+const BookDetails = (): JSX.Element => {
   let { id }: any = useParams();
   const { firebaseDataState } = useFirebaseDataState();
   const { books } = firebaseDataState;
 
-  const [bookData, setBookData] = useState<Book>();
+  const [bookData, setBookData] = useState<Book>({} as Book);
   const [notFound, setNotFound] = useState(false);
   const navigate = useNavigate();
 
@@ -26,17 +26,19 @@ const BookDetails: FC = (): ReactElement => {
 
   useEffect(() => {
     const fetchData = async () => {
+      let bookData;
+
       if (books && books.length) {
-        setBookData(books.find((book: Book) => book.id === id));
+        bookData = books.find((book: Book) => book.id === id);
       } else {
         const querySnapshot: DocumentSnapshot<DocumentData> = await getDoc(doc(db, 'books', id));
-        const bookData = querySnapshot.data();
+        bookData = querySnapshot.data();
+      }
 
-        if (bookData) {
-          setBookData(bookData as Book);
-        } else {
-          setNotFound(true);
-        }
+      if (bookData) {
+        setBookData(bookData as Book);
+      } else {
+        setNotFound(true);
       }
     };
 

@@ -1,5 +1,6 @@
-import React from 'react';
+import { memo } from 'react';
 import { Link } from 'react-router-dom';
+
 import { Book } from '../../models/Book';
 
 import styles from './BookListItem.module.css';
@@ -8,7 +9,7 @@ interface BookListItemProps {
   book: Book;
 }
 
-const BookListItem = React.memo(({ book }: BookListItemProps) => {
+const BookListItem = memo(({ book }: BookListItemProps) => {
   return (
     <div className={styles.bookListItem}>
       <Link to={`/book/${book.id}`}>

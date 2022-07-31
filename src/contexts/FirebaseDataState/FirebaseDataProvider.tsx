@@ -1,4 +1,4 @@
-import React from 'react';
+import { useReducer } from 'react';
 import { firebaseDataInitialState, firebaseDataReducer } from '../../stores/firebaseData';
 import { FirebaseDataStateCtx } from './FirebaseDataCtx';
 
@@ -7,7 +7,7 @@ interface FirebaseDataStateProviderProps {
 }
 
 export const FirebaseDataStateProvider = ({ children }: FirebaseDataStateProviderProps) => {
-  const [state, dispatch] = React.useReducer(firebaseDataReducer, firebaseDataInitialState);
+  const [state, dispatch] = useReducer(firebaseDataReducer, firebaseDataInitialState);
 
   return (
     <FirebaseDataStateCtx.Provider

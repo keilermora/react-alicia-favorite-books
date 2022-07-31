@@ -1,7 +1,9 @@
 import React from 'react';
-import { FilterActionType, FilterState } from '../../stores/filter';
+import { FilterActionType, filterInitialState } from '../../stores/filter';
 
-export const FilterStateCtx = React.createContext<{
-  filterState: FilterState;
+interface FilterStateCtxInterface {
+  filterState: typeof filterInitialState;
   dispatchFilterState: React.Dispatch<FilterActionType>;
-} | null>(null);
+}
+
+export const FilterStateCtx = React.createContext<FilterStateCtxInterface | null>(null);
