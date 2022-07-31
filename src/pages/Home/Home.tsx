@@ -6,11 +6,11 @@ import {
   QueryDocumentSnapshot,
   QuerySnapshot,
 } from 'firebase/firestore';
-import { Book } from 'models/Book';
-import { db } from '../../configs/firebase';
-import { FirebaseDataActions, FirebaseDataActionType } from 'stores/firebaseData';
-import { useFirebaseDataState } from 'contexts/FirebaseDataState';
-import Container from 'components/Container/Container';
+import { Book } from 'shared/models/Book';
+import { db } from 'configs/firebase';
+import { FirebaseDataActions, FirebaseDataActionType } from 'shared/stores/firebaseData';
+import { useFirebaseDataState } from 'shared/contexts/FirebaseDataState';
+import Container from 'shared/components/Container/Container';
 import Filter from './Filter';
 import BookList from './BookList';
 

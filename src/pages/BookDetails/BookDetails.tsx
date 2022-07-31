@@ -3,13 +3,13 @@ import { useParams } from 'react-router';
 import { useNavigate } from 'react-router-dom';
 import { doc, DocumentData, DocumentSnapshot, getDoc } from 'firebase/firestore';
 
-import { Button } from 'components/Button';
-import { Container } from 'components/Container';
-import { Book } from 'models/Book';
-import { useFirebaseDataState } from 'contexts/FirebaseDataState';
+import { Button } from 'shared/components/Button';
+import { Container } from 'shared/components/Container';
+import { Book } from 'shared/models/Book';
+import { useFirebaseDataState } from 'shared/contexts/FirebaseDataState';
 
 import styles from './BookDetails.module.css';
-import { db } from '../../configs/firebase';
+import { db } from 'configs/firebase';
 
 const BookDetails = (): JSX.Element => {
   let { id }: any = useParams();
