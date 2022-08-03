@@ -1,5 +1,11 @@
 import { FilterActions, FilterActionType } from './filterActions';
-import { filterInitialState } from './filterState';
+import { FilterState, filterInitialState } from './filterState';
 import { filterReducer } from './filterReducer';
 
-export { FilterActions, filterInitialState, filterReducer, type FilterActionType };
+export {
+  FilterActions,
+  filterInitialState,
+  filterReducer,
+  type FilterActionType,
+  type FilterState,
+};

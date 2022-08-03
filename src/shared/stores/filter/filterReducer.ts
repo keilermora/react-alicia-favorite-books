@@ -1,7 +1,10 @@
-import { FilterActions, FilterActionType, filterInitialState } from '.';
+import { FilterActions, FilterActionType } from './filterActions';
+import { FilterState } from './filterState';
 
-export const filterReducer = (state: typeof filterInitialState, action: FilterActionType) => {
+export const filterReducer = (state: FilterState, action: FilterActionType) => {
   switch (action.type) {
+    case FilterActions.SET_FILTER:
+      return action.payload;
     case FilterActions.SET_FILTER_TEXT:
       return {
         ...state,

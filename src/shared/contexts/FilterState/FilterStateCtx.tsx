@@ -1,8 +1,8 @@
 import React from 'react';
-import { FilterActionType, filterInitialState } from 'shared/stores/filter';
+import { FilterActionType, FilterState } from 'shared/stores/filter';
 
 interface FilterStateCtxInterface {
-  filterState: typeof filterInitialState;
+  filterState: FilterState;
   dispatchFilterState: React.Dispatch<FilterActionType>;
 }
 

@@ -1,88 +1,138 @@
-import { ChangeEvent, ReactElement } from 'react';
+import { ChangeEvent, useEffect, useMemo, useState } from 'react';
 
-import { FilterActions } from 'shared/stores/filter';
 import { useFilterState } from 'shared/contexts/FilterState';
 import { useFirebaseDataState } from 'shared/contexts/FirebaseDataState';
+import { useQueryParams } from 'shared/hooks/useQueryParams';
+import { QueryParams } from 'shared/models/QueryParams';
+import { FilterActions, FilterState } from 'shared/stores/filter';
 
 import styles from './Filter.module.css';
 
 const Filter = (): JSX.Element => {
+  const [isFormModified, setIsFormModified] = useState(false);
+
   const { filterState, dispatchFilterState } = useFilterState();
   const { firebaseDataState } = useFirebaseDataState();
+  const { queryParams, setQueryParams } = useQueryParams();
 
   const { filterText, selectedAuthor, selectedGenre, selectedSaga } = filterState;
   const { authors, genres, sagas } = firebaseDataState;
 
-  let authorOptions: ReactElement[] = [];
-  let genreOptions: ReactElement[] = [];
-  let sagaOptions: ReactElement[] = [];
+  /**
+   * Update filter form based on query params
+   */
+  useEffect(() => {
+    const { filterText, selectedAuthor, selectedGenre, selectedSaga } = filterState;
 
-  const setFilterText = (e: ChangeEvent<HTMLInputElement>) => {
-    dispatchFilterState({ type: FilterActions.SET_FILTER_TEXT, payload: e.target.value });
-  };
+    const filter: FilterState = {
+      filterText: queryParams.get('text') || filterText,
+      selectedAuthor: queryParams.get('author') || selectedAuthor,
+      selectedGenre: queryParams.get('genre') || selectedGenre,
+      selectedSaga: queryParams.get('saga') || selectedSaga,
+    };
 
-  const selectAuthor = (e: ChangeEvent<HTMLSelectElement>) => {
-    dispatchFilterState({ type: FilterActions.SET_FILTER_AUTHOR, payload: e.target.value });
-  };
+    dispatchFilterState({ type: FilterActions.SET_FILTER, payload: filter });
 
-  const selectGenre = (e: ChangeEvent<HTMLSelectElement>) => {
-    dispatchFilterState({ type: FilterActions.SET_FILTER_GENRE, payload: e.target.value });
-  };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  const selectSaga = (e: ChangeEvent<HTMLSelectElement>) => {
-    dispatchFilterState({ type: FilterActions.SET_FILTER_SAGA, payload: e.target.value });
-  };
+  /**
+   * Update query params each time the filterState is modified
+   */
+  useEffect(() => {
+    if (isFormModified) {
+      const { filterText, selectedAuthor, selectedGenre, selectedSaga } = filterState;
 
-  if (authors?.length) {
-    authorOptions = authors.map((author: string, index: number) => (
-      <option key={index} value={author}>
-        {author}
-      </option>
-    ));
-  }
+      const newQueryParams: QueryParams = {
+        text: filterText,
+        author: selectedAuthor,
+        genre: selectedGenre,
+        saga: selectedSaga,
+      };
 
-  if (genres?.length) {
-    genreOptions = genres.map((genre: string, index: number) => (
-      <option key={index} value={genre}>
-        {genre}
-      </option>
-    ));
-  }
+      setQueryParams(newQueryParams);
+    }
+  }, [filterState, isFormModified, setQueryParams]);
 
-  if (sagas?.length) {
-    sagaOptions = sagas.map((saga: string, index: number) => (
-      <option key={index} value={saga}>
-        {saga}
-      </option>
-    ));
-  }
+  const modifyForm = useMemo(
+    () => () => {
+      if (!isFormModified) {
+        setIsFormModified(true);
+      }
+    },
+    [isFormModified]
+  );
+
+  const onChangeFilterText = useMemo(
+    () => (e: ChangeEvent<HTMLInputElement>) => {
+      modifyForm();
+      dispatchFilterState({ type: FilterActions.SET_FILTER_TEXT, payload: e.target.value });
+    },
+    [dispatchFilterState, modifyForm]
+  );
+
+  const onChangeAuthor = useMemo(
+    () => (e: ChangeEvent<HTMLSelectElement>) => {
+      modifyForm();
+      dispatchFilterState({ type: FilterActions.SET_FILTER_AUTHOR, payload: e.target.value });
+    },
+    [dispatchFilterState, modifyForm]
+  );
+
+  const onChangeGenre = useMemo(
+    () => (e: ChangeEvent<HTMLSelectElement>) => {
+      modifyForm();
+      dispatchFilterState({ type: FilterActions.SET_FILTER_GENRE, payload: e.target.value });
+    },
+    [dispatchFilterState, modifyForm]
+  );
+
+  const onChangeSaga = useMemo(
+    () => (e: ChangeEvent<HTMLSelectElement>) => {
+      modifyForm();
+      dispatchFilterState({ type: FilterActions.SET_FILTER_SAGA, payload: e.target.value });
+    },
+    [dispatchFilterState, modifyForm]
+  );
 
   return (
     <form className={styles.filter}>
       <div className={styles.inputGroup}>
         <label htmlFor="selectedAuthor">Autor</label>
-        <select id="selectedAuthor" onChange={selectAuthor} value={selectedAuthor}>
+        <select id="selectedAuthor" onChange={onChangeAuthor} value={selectedAuthor}>
           <option value="">Todos</option>
-          {authorOptions}
+          {authors.map((author) => (
+            <option key={author} value={author}>
+              {author}
+            </option>
+          ))}
         </select>
       </div>
       <div className={styles.inputGroup}>
         <label htmlFor="selectedGenre">Género</label>
-        <select id="selectedGenre" onChange={selectGenre} value={selectedGenre}>
+        <select id="selectedGenre" onChange={onChangeGenre} value={selectedGenre}>
           <option value="">Todos</option>
-          {genreOptions}
+          {genres.map((genre) => (
+            <option key={genre} value={genre}>
+              {genre}
+            </option>
+          ))}
         </select>
       </div>
       <div className={styles.inputGroup}>
         <label htmlFor="selectedSaga">Saga</label>
-        <select id="selectedSaga" onChange={selectSaga} value={selectedSaga}>
+        <select id="selectedSaga" onChange={onChangeSaga} value={selectedSaga}>
           <option value="">Todas</option>
-          {sagaOptions}
+          {sagas.map((saga) => (
+            <option key={saga} value={saga}>
+              {saga}
+            </option>
+          ))}
         </select>
       </div>
       <div className={styles.inputGroup}>
         <label htmlFor="filterText">Título</label>
-        <input id="filterText" type="text" value={filterText} onChange={setFilterText} />
+        <input id="filterText" type="text" value={filterText} onChange={onChangeFilterText} />
       </div>
     </form>
   );

@@ -1,6 +1,6 @@
-import { Book } from 'shared/models/Book';
 import { useFilterState } from 'shared/contexts/FilterState';
 import { useFirebaseDataState } from 'shared/contexts/FirebaseDataState';
+import { Book } from 'shared/entities/Book';
 import BookListItem from './BookListItem';
 
 import styles from './BookList.module.css';

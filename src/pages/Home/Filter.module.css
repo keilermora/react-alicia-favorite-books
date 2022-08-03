@@ -1,6 +1,6 @@
 .filter {
-  padding-top: 1.5em;
-  padding-bottom: 1.5em;
+  padding-top: 4em;
+  padding-bottom: 4em;
   text-align: center;
   display: flex;
   align-items: center;
@@ -23,7 +23,7 @@
 }
 
 .inputGroup label {
-  color: var(--stiletto);
+  color: black;
   font-size: 1.75rem;
   font-family: var(--dancing-script);
 }
