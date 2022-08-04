@@ -1,9 +1,5 @@
 import ScrollAnimation from 'react-animate-on-scroll';
-
-import { Anchor } from 'shared/components/Anchor';
-import { Button } from 'shared/components/Button';
-import { Container } from 'shared/components/Container';
-
+import { Anchor, Button, Container } from 'shared/components';
 import styles from './About.module.css';
 
 const About = () => {

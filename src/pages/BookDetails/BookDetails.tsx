@@ -2,14 +2,11 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { useNavigate } from 'react-router-dom';
 import { doc, DocumentData, DocumentSnapshot, getDoc } from 'firebase/firestore';
-
-import { Button } from 'shared/components/Button';
-import { Container } from 'shared/components/Container';
-import { Book } from 'shared/entities/Book';
-import { useFirebaseDataState } from 'shared/contexts/FirebaseDataState';
-
-import styles from './BookDetails.module.css';
+import { Button, Container } from 'shared/components';
 import { db } from 'configs/firebase';
+import Book from 'shared/interfaces/Book';
+import useFirebaseDataState from 'shared/hooks/useFirebaseDataState';
+import styles from './BookDetails.module.css';
 
 const BookDetails = (): JSX.Element => {
   let { id }: any = useParams();

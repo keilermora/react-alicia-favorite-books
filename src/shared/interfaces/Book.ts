@@ -1,4 +1,4 @@
-export interface Book {
+interface Book {
   id: string;
   author: string;
   genre: string;
@@ -9,6 +9,9 @@ export interface Book {
   title: string;
 }
 
-export interface PublishedAt {
+interface PublishedAt {
   seconds: number;
 }
+
+export default Book;
+export type { PublishedAt };

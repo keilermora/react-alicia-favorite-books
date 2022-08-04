@@ -1,9 +1,11 @@
 import React from 'react';
 import { FilterActionType, FilterState } from 'shared/stores/filter';
 
-interface FilterStateCtxInterface {
+interface FilterStateContextInterface {
   filterState: FilterState;
   dispatchFilterState: React.Dispatch<FilterActionType>;
 }
 
-export const FilterStateCtx = React.createContext<FilterStateCtxInterface | null>(null);
+const FilterStateContext = React.createContext<FilterStateContextInterface | null>(null);
+
+export default FilterStateContext;

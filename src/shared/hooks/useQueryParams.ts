@@ -1,13 +1,13 @@
 import { useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { QueryParams } from 'shared/models/QueryParams';
+import QueryParams from 'shared/interfaces/QueryParams';
 
-export const useQueryParams = () => {
+const useQueryParams = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const updateQueryParams = useMemo(
     () => (queryParams: QueryParams) => {
-      const newQueryParams: QueryParams = {};
+      let newQueryParams: QueryParams = {};
       const { text, author, genre, saga } = queryParams;
 
       if (text) {
@@ -33,3 +33,5 @@ export const useQueryParams = () => {
 
   return { queryParams: searchParams, setQueryParams: updateQueryParams };
 };
+
+export default useQueryParams;

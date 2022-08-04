@@ -1,4 +1,4 @@
-import { Book } from 'shared/entities/Book';
+import Book from 'shared/interfaces/Book';
 
 export const firebaseDataInitialState = {
   books: [] as Book[],

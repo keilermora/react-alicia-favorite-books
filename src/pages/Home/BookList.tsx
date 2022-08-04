@@ -1,8 +1,7 @@
-import { useFilterState } from 'shared/contexts/FilterState';
-import { useFirebaseDataState } from 'shared/contexts/FirebaseDataState';
-import { Book } from 'shared/entities/Book';
+import Book from 'shared/interfaces/Book';
 import BookListItem from './BookListItem';
-
+import useFirebaseDataState from 'shared/hooks/useFirebaseDataState';
+import useFilterState from 'shared/hooks/useFilterState';
 import styles from './BookList.module.css';
 
 const BookList = () => {

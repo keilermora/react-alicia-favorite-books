@@ -1,8 +1,6 @@
 import { memo } from 'react';
 import { Link } from 'react-router-dom';
-
-import { Book } from 'shared/entities/Book';
-
+import Book from 'shared/interfaces/Book';
 import styles from './BookListItem.module.css';
 
 interface BookListItemProps {

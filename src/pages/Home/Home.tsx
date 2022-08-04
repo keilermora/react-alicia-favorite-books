@@ -6,18 +6,16 @@ import {
   QueryDocumentSnapshot,
   QuerySnapshot,
 } from 'firebase/firestore';
-import { Book } from 'shared/entities/Book';
+import Book from 'shared/interfaces/Book';
 import { db } from 'configs/firebase';
+import { Container } from 'shared/components';
 import { FirebaseDataActions, FirebaseDataActionType } from 'shared/stores/firebaseData';
-import { useFirebaseDataState } from 'shared/contexts/FirebaseDataState';
-import Container from 'shared/components/Container/Container';
+import { ReactComponent as Panda } from 'assets/images/panda.svg';
+import removeDuplicates from 'shared/utils/removeDuplicates';
+import useFirebaseDataState from 'shared/hooks/useFirebaseDataState';
 import Filter from './Filter';
 import BookList from './BookList';
-
-import { ReactComponent as Panda } from 'assets/images/panda.svg';
 import styles from './Home.module.css';
-import { removeDuplicates } from 'shared/utils/removeDuplicates';
-import { useSearchParams } from 'react-router-dom';
 
 const fetchBooks = async (dispatch: Dispatch<FirebaseDataActionType>) => {
   let books: Book[] = [];

@@ -1,12 +1,14 @@
-import React from 'react';
-import { FirebaseDataStateCtx } from '../contexts/FirebaseDataState';
+import { useContext } from 'react';
+import FirebaseDataStateContext from 'shared/contexts/FirebaseDataState/FirebaseDataContext';
 
-export const useFirebaseDataState = () => {
-  const ctx = React.useContext(FirebaseDataStateCtx);
+const useFirebaseDataState = () => {
+  const context = useContext(FirebaseDataStateContext);
 
-  if (!ctx) {
+  if (!context) {
     throw new Error('useFirebaseDataState must be used within the FirebaseDataStateCtx');
   }
 
-  return ctx;
+  return context;
 };
+
+export default useFirebaseDataState;

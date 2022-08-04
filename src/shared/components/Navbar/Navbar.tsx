@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom';
-
-import { Container } from 'shared/components/Container';
-
+import { Container } from 'shared/components';
 import styles from './Navbar.module.css';
 
 const Navbar = (): JSX.Element => {

@@ -1,19 +1,21 @@
 import { useReducer } from 'react';
 import { firebaseDataInitialState, firebaseDataReducer } from 'shared/stores/firebaseData';
-import { FirebaseDataStateCtx } from '.';
+import FirebaseDataStateContext from './FirebaseDataContext';
 
 interface FirebaseDataStateProviderProps {
   children: React.ReactNode;
 }
 
-export const FirebaseDataStateProvider = ({ children }: FirebaseDataStateProviderProps) => {
+const FirebaseDataStateProvider = ({ children }: FirebaseDataStateProviderProps) => {
   const [state, dispatch] = useReducer(firebaseDataReducer, firebaseDataInitialState);
 
   return (
-    <FirebaseDataStateCtx.Provider
+    <FirebaseDataStateContext.Provider
       value={{ firebaseDataState: state, dispatchFirebaseData: dispatch }}
     >
       {children}
-    </FirebaseDataStateCtx.Provider>
+    </FirebaseDataStateContext.Provider>
   );
 };
+
+export default FirebaseDataStateProvider;

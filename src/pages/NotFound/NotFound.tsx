@@ -1,6 +1,4 @@
-import { Button } from 'shared/components/Button';
-import { Container } from 'shared/components/Container';
-
+import { Button, Container } from 'shared/components';
 import styles from './NotFound.module.css';
 
 const NotFound = (): JSX.Element => {

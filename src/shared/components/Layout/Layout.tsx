@@ -1,8 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { Footer } from '../Footer';
-import { Navbar } from '../Navbar';
-import { ParticlesBackground } from '../ParticlesBackground';
-import { ScrollToTop } from '../ScrollToTop';
+import { Footer, Navbar, ParticlesBackground, ScrollToTop } from 'shared/components';
 
 const Layout = () => {
   return (

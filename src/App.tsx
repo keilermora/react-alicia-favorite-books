@@ -1,9 +1,9 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { FilterStateProvider } from 'shared/contexts/FilterState/FilterStateProvider';
-import { FirebaseDataStateProvider } from 'shared/contexts/FirebaseDataState/FirebaseDataProvider';
+import FilterStateProvider from 'shared/contexts/FilterState/FilterStateProvider';
+import FirebaseDataStateProvider from 'shared/contexts/FirebaseDataState/FirebaseDataProvider';
 
-const Layout = lazy(() => import('shared/components/Layout'));
+const Layout = lazy(() => import('shared/components/Layout/Layout'));
 const Home = lazy(() => import('pages/Home'));
 const About = lazy(() => import('pages/About'));
 const BookDetails = lazy(() => import('pages/BookDetails'));

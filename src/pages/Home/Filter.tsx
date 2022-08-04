@@ -1,11 +1,9 @@
 import { ChangeEvent, useEffect, useMemo, useState } from 'react';
-
-import { useFilterState } from 'shared/contexts/FilterState';
-import { useFirebaseDataState } from 'shared/contexts/FirebaseDataState';
-import { useQueryParams } from 'shared/hooks/useQueryParams';
-import { QueryParams } from 'shared/models/QueryParams';
+import useFilterState from 'shared/hooks/useFilterState';
+import useFirebaseDataState from 'shared/hooks/useFirebaseDataState';
+import useQueryParams from 'shared/hooks/useQueryParams';
 import { FilterActions, FilterState } from 'shared/stores/filter';
-
+import QueryParams from 'shared/interfaces/QueryParams';
 import styles from './Filter.module.css';
 
 const Filter = (): JSX.Element => {

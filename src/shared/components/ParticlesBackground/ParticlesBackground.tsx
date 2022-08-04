@@ -1,11 +1,9 @@
 import React, { useCallback } from 'react';
 import Particles from 'react-tsparticles';
-
-import particles from 'assets/particles.json';
-
-import styles from './ParticlesBackground.module.css';
-import { Engine, ISourceOptions } from 'tsparticles-engine';
 import { loadFull } from 'tsparticles';
+import { Engine, ISourceOptions } from 'tsparticles-engine';
+import particles from 'assets/particles.json';
+import styles from './ParticlesBackground.module.css';
 
 interface ParticlesBackgroundProps {
   children: React.ReactNode;
