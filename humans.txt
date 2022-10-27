@@ -3,11 +3,11 @@ Desarrollador: Keiler Mora.
 Site: https://www.linkedin.com/in/keilermora/
 Location: Santiago, Chile.
 
-/* THANKS */					
+/* THANKS */
 Name: Alicia Torres
 
 /* SITE */
 Created at: 2018/10/30
-Last update: 2021/03/23
+Last update: 2022/07/28
 Standards: HTML5, CSS3, JavaScript.
 Components: Bootstrap, React, Redux.
