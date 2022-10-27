@@ -1,7 +1,8 @@
 {
   "name": "Los libros Favoritos de Alicia",
   "short_name": "Los libros Favoritos de Alicia",
-  "start_url": "/",
+  "start_url": "/alicia-s-favorite-books/",
+  "scope": "/alicia-s-favorite-books/",
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#f0f8ff",
@@ -10,7 +11,7 @@
   "icons": [
     {
       "src": "panda.svg",
-      "sizes": "144x144 64x64 32x32 24x24 16x16",
+      "sizes": "144x144",
       "type": "image/svg+xml"
     }
   ],
