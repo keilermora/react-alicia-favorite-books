@@ -10,9 +10,9 @@
   "description": "Para ella &hearts; Desarrollado por Keiler Mora, usando las librerías de JavaScript React y Redux para crear la interfaz de usuario.",
   "icons": [
     {
-      "src": "panda.svg",
+      "src": "panda.png",
       "sizes": "144x144",
-      "type": "image/svg+xml"
+      "type": "image/png"
     }
   ],
   "lang": "es"
