@@ -1,7 +1,7 @@
 {
   "name": "Los libros Favoritos de Alicia",
   "short_name": "Los libros Favoritos de Alicia",
-  "start_url": "./index.html",
+  "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#f0f8ff",
@@ -9,9 +9,9 @@
   "description": "Para ella &hearts; Desarrollado por Keiler Mora, usando las librerías de JavaScript React y Redux para crear la interfaz de usuario.",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "panda.svg",
+      "sizes": "144x144 64x64 32x32 24x24 16x16",
+      "type": "image/svg+xml"
     }
   ],
   "lang": "es"
