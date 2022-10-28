@@ -1,42 +1,36 @@
-# [Libros favoritos de Alicia](https://keilermora.github.io/alicia-s-favorite-books)
-
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-Proyecto desarrollado en [React](https://facebook.github.io/react/), una librería de Javascript para construir interfaces de usuario.
+# Alicia's favorite books
 
-## Requerimientos
+https://keilermora.github.io/alicia-s-favorite-books
+
+App built in [React](https://facebook.github.io/react/) as a learning project.
+
+## Minimum requirements
 
 - [Node.js LTS](https://nodejs.org/es/download/)
 - [Yarn](https://classic.yarnpkg.com/en/docs/install)
-- [Serve](https://github.com/vercel/serve#readme) (Opcional)
 
-## Iniciar el ambiente de desarrollo
+## Init local environment
 
-Para instalar todas las dependencias, se deben ejecutar los siguientes comandos en la carpeta raíz donde se encuentre ubicado el archivo `package.json`.
+Run in the project root directory:
 
 ```sh
 $ yarn install
 $ yarn start
 ```
 
-La aplicación se iniciará en el navegador web por defecto, en la ruta `http://localhost:3000/`.
+Then, navigate to `http://localhost:3000/`.
 
-## Iniciar el ambiente de producción
-
-Las siguientes líneas de comandos crearán una versión optimizada de la aplicación en la carpeta `build`. Luego, levantará un servidor local en la ruta `http://localhost:5000` apuntando a dicha carpeta a través de [Serve](https://github.com/vercel/serve#readme).
-
-```sh
-$ yarn build
-$ serve -s build
-```
-
-## Referencias
+## References
 
 - [**Firebase**](https://firebase.google.com/): Firebase helps you build and run successful apps.
+- [**Progressive Web App (PWA)**](https://web.dev/progressive-web-apps/): Web application that have been designed to be capable, reliable, and installable.
 - [**React**](https://github.com/facebook/react): A Javascript library for building user interfaces.
 - [**React Animate on Scroll**](https://github.com/dbramwell/react-animate-on-scroll): React component to animate elements on scroll.
 - [**React DOM**](https://facebook.github.io/react/docs/react-dom.html): Provides DOM-specific methods that can be used at the top level of your app and as an escape hatch to get outside of the React model if you need to.
+- [**React Google Analytics Module**](https://github.com/react-ga/react-ga): A JavaScript module that can be used to include Google Analytics tracking code in a website or app that uses React for its front-end codebase.
 - [**React Particles Js**](https://github.com/Wufe/react-particles-js): Implementation in Typescript + React of [Particles.js](https://github.com/VincentGarreau/particles.js) by [Vincent Garreau](https://github.com/VincentGarreau).
 - [**React Router DOM**](https://reactrouter.com/web/guides/philosophy): Is a collection of navigational components that compose declaratively with your application.
 - [**React Scripts**](https://github.com/facebook/create-react-app#readme): Create React apps with no build configuration.
