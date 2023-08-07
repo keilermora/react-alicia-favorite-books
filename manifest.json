@@ -1,8 +1,8 @@
 {
   "name": "Los libros Favoritos de Alicia",
   "short_name": "Los libros Favoritos de Alicia",
-  "start_url": "/alicia-s-favorite-books/",
-  "scope": "/alicia-s-favorite-books/",
+  "start_url": "/react-alicia-favorite-books/",
+  "scope": "/react-alicia-favorite-books/",
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#f0f8ff",
