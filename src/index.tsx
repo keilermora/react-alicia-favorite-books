@@ -12,10 +12,10 @@ const { REACT_APP_TRACKING_ID } = process.env;
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/alicia-s-favorite-books">
+    <BrowserRouter basename="/react-alicia-favorite-books">
       <App />
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
 
 if (REACT_APP_TRACKING_ID) {

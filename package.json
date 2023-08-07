@@ -1,8 +1,8 @@
 {
-  "name": "alicia-s-favorite-books",
+  "name": "react-alicia-favorite-books",
   "version": "3.0.0",
   "private": true,
-  "homepage": "https://keilermora.github.io/alicia-s-favorite-books",
+  "homepage": "https://keilermora.github.io/react-alicia-favorite-books",
   "packageManager": "yarn@3.2.4",
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",

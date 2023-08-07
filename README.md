@@ -2,11 +2,11 @@
 
 Her favorite books app built in [React](https://facebook.github.io/react/) as a learning project.
 
-https://keilermora.github.io/alicia-s-favorite-books
+https://keilermora.github.io/react-alicia-favorite-books
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-[![s](https://github.com/keilermora/alicia-s-favorite-books/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/keilermora/alicia-s-favorite-books/actions/workflows/pages/pages-build-deployment)
+[![s](https://github.com/keilermora/react-alicia-favorite-books/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/keilermora/react-alicia-favorite-books/actions/workflows/pages/pages-build-deployment)
 
 ---
 
